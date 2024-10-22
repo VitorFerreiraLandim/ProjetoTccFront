@@ -31,7 +31,8 @@ body {
     
             img {
                 width: 100%; 
-                display: block; 
+                display: block;
+                 
             }
     
             h1 {
@@ -66,7 +67,7 @@ body {
                     width: 6dvh;
                     height: 6dvh;
                     transition: transform 1s ease;
-    
+                    margin: 2dvh;
                     &:hover {
                         transform: scale(1.1); 
                     }
@@ -96,7 +97,7 @@ body {
         .modal-content {
             position: relative; 
             background: white;
-            width: 40%;
+            width: 43%;
             height: 90%;
             border-radius: 8px;
             display: flex;
@@ -485,5 +486,7 @@ body {
         }
     }
     }
-}
+    
+    }
+
 

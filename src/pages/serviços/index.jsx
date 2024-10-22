@@ -183,7 +183,7 @@ export default function Servicos() {
             if (resp.status === 201) {
                 alert('Agendamento realizado com sucesso!');
                 fecharModal();
-                setServicosSelecionados([]); // Limpa os serviços agendados após confirmação
+                setServicosSelecionados([]);    
             }
         } catch (error) {
             console.error('Erro ao agendar:', error);
