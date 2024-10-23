@@ -2,15 +2,18 @@ import './index.scss';
 import servicos from '../../assets/images/servicos.webp';
 import seta from '../../assets/images/seta2.jpg';
 import seta2 from '../../assets/images/next.png';
+import check from '../../assets/images/check.png';
 import x from '../../assets/images/x.png';
 import { Link } from 'react-router-dom';
 import Servico from '../../components/serviços';
 import { useState } from 'react';
 import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
 
 export default function Servicos() {
     const [modalAberto, setModalAberto] = useState(false);
     const [modalAdicionarServicoAberto, setModalAdicionarServicoAberto] = useState(false);
+    const [modalSucessoAberto, setModalSucessoAberto] = useState(false);
     const [servicoSelecionado, setServicoSelecionado] = useState(null);
     const [horaSelecionada, setHoraSelecionada] = useState(null);
     const [indiceInicioDia, setIndiceInicioDia] = useState(0);
@@ -20,6 +23,7 @@ export default function Servicos() {
     const [offsetHora, setOffsetHora] = useState(0);
     const [servicosSelecionados, setServicosSelecionados] = useState([]);
     const horasPorConjunto = 6;
+    const navigate = useNavigate()
 
     const servicosList = [
         { 'trabalho': 'Escova e Prancha', 'valor': '30,00' },
@@ -60,6 +64,8 @@ export default function Servicos() {
     const fecharModalAdicionarServico = () => {
         setModalAdicionarServicoAberto(false);
     };
+
+    
 
     const confirmarSelecao = async () => {
         const checkboxes = document.querySelectorAll('.adi-sev input[type="checkbox"]');
@@ -181,13 +187,17 @@ export default function Servicos() {
             console.log('Resposta da API:', resp); 
 
             if (resp.status === 201) {
-                alert('Agendamento realizado com sucesso!');
+                setModalSucessoAberto(true);
                 fecharModal();
                 setServicosSelecionados([]);    
             }
         } catch (error) {
             console.error('Erro ao agendar:', error);
         }
+    };
+
+    const fecharModalCheck = () => {
+        setModalSucessoAberto(false);
     };
 
     const Linha = () => <div className="linha"></div>;
@@ -338,6 +348,21 @@ export default function Servicos() {
                     </div>
                 </div>
             )}
-        </div>
+            
+            {modalSucessoAberto && (
+                <div className="modal-overlay">
+                    <div className="modal-content">
+                        <img src={check} alt="" />
+                        <h2>PARABÉNS!</h2>
+                        <p>Agendamento realizado com sucesso!</p>
+                        <button onClick={fecharModalCheck}>fechar</button>
+                        <button onClick={() => navigate('/AgendamentosCliente')}>ver agendamento</button>
+                    </div>
+                </div>
+
+            )}
+            </div>
+
     );
 }
+

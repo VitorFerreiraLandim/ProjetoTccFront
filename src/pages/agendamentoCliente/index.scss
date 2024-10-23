@@ -14,7 +14,7 @@
         border-radius: 2dvh; 
         box-shadow: 0 8px 150px rgba(0, 0, 0, 0.3);
         justify-content: center;
-
+        overflow-y: auto;
         .esq2{
             width: 50%;
             display: flex;
@@ -33,7 +33,8 @@
             border-radius: 1dvh; 
             display: flex;
             flex-direction: row;
-            margin-top: 3dvh;
+            margin-top: 2.7dvh;
+            padding-bottom: 1dvh;
 
             .esq {
                 display: flex;
@@ -43,8 +44,8 @@
                 .butao {
                     display: flex;
                     
-                    margin-top: 2dvh;
-
+                    margin-top: 1dvh;
+                    
                     .b1 {
                         height: 3dvh; 
                         width: 10dvh; 

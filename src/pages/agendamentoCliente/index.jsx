@@ -1,11 +1,13 @@
 import './index.scss';
 import { useEffect, useState } from 'react';
 import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
 
 export default function AgendamentosCliente() {
     const [agendamentos, setAgendamentos] = useState([]);
     const [isModalOpen, setIsModalOpen] = useState(false);
     const [selectedId, setSelectedId] = useState(null);
+    const navigate = useNavigate();
 
     useEffect(() => {
         const clienteId = localStorage.getItem('USUARIO_ID');
@@ -46,10 +48,19 @@ export default function AgendamentosCliente() {
         setSelectedId(null);
     };
 
-    // Função para verificar se o agendamento já passou
     const isAgendamentoFinalizado = (agendamento) => {
         const agendamentoDate = new Date(agendamento.dia + ' ' + agendamento.hora);
         return agendamentoDate < new Date();
+    };
+
+    const Remarcar = async (id) => {
+        try {
+            await axios.delete(`http://localhost:5001/agendamento/${id}`);
+            setAgendamentos(agendamentos.filter(agendamento => agendamento.id !== id));
+            navigate('/servicos');
+        } catch (error) {
+            console.error('Erro ao desmarcar o agendamento:', error);
+        }
     };
 
     return (
@@ -57,7 +68,7 @@ export default function AgendamentosCliente() {
             <div className='agenda'>
                 <div className='esq2'> 
                     <h1 className='my-agenda'>Meus Agendamentos</h1>
-                    {agendamentos.map((agendamento) => (
+                    {agendamentos.slice().reverse().map((agendamento) => (
                         <div className='card-info' key={agendamento.id}>
                             <div className='esq'>
                                 <p className={isAgendamentoFinalizado(agendamento) ? 'finalizada' : 'confirma'}>
@@ -66,7 +77,7 @@ export default function AgendamentosCliente() {
                                 <p className='serviço'>{agendamento.trabalho}</p>
                                 <div className='butao'>
                                     <button className='b1' onClick={() => handleDesmarcarClick(agendamento.id)} disabled={isAgendamentoFinalizado(agendamento)}>Desmarcar</button>
-                                    <button className='b2'>Remarcar</button>
+                                    <button className='b2' onClick={() => Remarcar(agendamento.id)} disabled={isAgendamentoFinalizado(agendamento)}>Remarcar</button>
                                 </div>
                             </div>
                             <div className='divisao2'></div>
