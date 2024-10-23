@@ -53,6 +53,7 @@ export default function HomePage() {
                 <Link to='/servicos' className='Link'>agendar</Link>
                 <Link className='Link'>contato</Link>
                 <Link to='/agendamentosCliente' className='Link'>agendamentos</Link>
+                <Link to='/ConfigConta' className='Link'>ConfigConta</Link>
                 <Link onClick={openModal}><img className='perfil' src={perfil} alt="" /></Link>
                 
             </div>
