@@ -8,22 +8,12 @@ import cabelo3 from '../../assets/images/cabelo3.webp'
 import cabelo4 from '../../assets/images/cabelo5.avif'
 import cabelo5 from '../../assets/images/escova.webp'
 import { Link } from 'react-router-dom'
-import { GoogleMap, useJsApiLoader , Marker} from '@react-google-maps/api';
 import { useState, useEffect } from 'react';
 
 
 export default function HomePage() {
     const [isModalOpen, setIsModalOpen] = useState(false);
 
-    const { isLoaded } = useJsApiLoader({
-        id: 'google-map-script',
-        googleMapsApiKey: "AIzaSyAzC_kDPsUhwFwZ0E7t2SOvRyK5Y8YVDE8"
-    });
-
-    const position = {
-        lat: -23.680318798076144,
-        lng: -46.70840936899394 
-    }
 
     const openModal = () => {
         setIsModalOpen(true);
@@ -43,6 +33,9 @@ export default function HomePage() {
             document.body.style.overflow = 'unset';
         };
     }, [isModalOpen]);
+
+    const nome = localStorage.getItem('NOME_USUARIO')
+
 
     return (
         <div className='div'>
@@ -148,8 +141,13 @@ export default function HomePage() {
             </iframe>
             {isModalOpen && (
                 <div className='modal'>
-                    <div className='modal-content'>
-                    <span className='close' onClick={closeModal}>&times;</span>
+                    <div className='modal-content'>        
+                        <span className='close' onClick={closeModal}>&times;</span>
+                    <div className='infor'>
+                        <img src={perfil} alt="" />
+                        <p>{nome}</p>
+                    </div>
+                    <div className='linha2'></div>
                     </div>
                 </div>
             )}
