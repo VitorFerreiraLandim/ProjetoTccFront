@@ -350,13 +350,15 @@ export default function Servicos() {
             )}
             
             {modalSucessoAberto && (
-                <div className="modal-overlay">
-                    <div className="modal-content">
+                <div className="modal-overlay sucesso">
+                    <div className="modal-content modalSucessoAberto">
                         <img src={check} alt="" />
                         <h2>PARABÉNS!</h2>
                         <p>Agendamento realizado com sucesso!</p>
-                        <button onClick={fecharModalCheck}>fechar</button>
-                        <button onClick={() => navigate('/AgendamentosCliente')}>ver agendamento</button>
+                        <div className='button'>
+                        <button className='b1' onClick={fecharModalCheck}>Fechar</button>
+                        <button className='b2' onClick={() => navigate('/AgendamentosCliente')}>Ver agenda</button>
+                        </div>
                     </div>
                 </div>
 

@@ -46,11 +46,10 @@ export default function HomePage() {
                 <Link to='/servicos' className='Link'>agendar</Link>
                 <Link className='Link'>contato</Link>
                 <Link to='/agendamentosCliente' className='Link'>agendamentos</Link>
-                <Link to='/ConfigConta' className='Link'>ConfigConta</Link>
                 <Link onClick={openModal}><img className='perfil' src={perfil} alt="" /></Link>
                 
             </div>
-            <div className='vitin-do-capa'>
+            <div className='principal'>
                 <div className='botao'>
                     <h1>CORTES MORDENOS!</h1>
                     <button>AGENDE JÁ</button>
@@ -136,20 +135,24 @@ export default function HomePage() {
             style={{border: '0' }}
             allowfullscreen 
             loading="lazy" 
-            referrerpolicy="no-referrer-when-downgrade">
-                
+            referrerpolicy="no-referrer-when-downgrade">           
             </iframe>
             {isModalOpen && (
-                <div className='modal'>
-                    <div className='modal-content'>        
-                        <span className='close' onClick={closeModal}>&times;</span>
-                    <div className='infor'>
-                        <img src={perfil} alt="" />
-                        <p>{nome}</p>
-                    </div>
-                    <div className='linha2'></div>
-                    </div>
-                </div>
+               <div className='modal'>
+               <div className='modal-content'>        
+                   <span className='close' onClick={closeModal}>&times;</span>
+                   <div className='informaceos'>
+                       <img src={perfil} alt="" />
+                       <p>{nome}</p>
+                   </div>
+                   <div className='linha2'></div> 
+                   <div className='links'>
+                        <Link to='/ConfigConta' className='configuracao'>configurar conta</Link>
+                        <Link to='/' className='sair'>Sair</Link>
+                   </div>
+               </div>
+           </div>
+           
             )}
         </div>
     );

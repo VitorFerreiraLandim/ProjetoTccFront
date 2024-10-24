@@ -118,7 +118,7 @@ export default function RegisterPage() {
                             <img src={perfil} alt="" />
                             <input 
                                 type="text" 
-                                placeholder='Nome de usuario'
+                                placeholder='Nome completo'
                                 value={nome}
                                 onChange={e => setNome(e.target.value)}
                                 onClick={limparMensagemErro}
@@ -167,7 +167,7 @@ export default function RegisterPage() {
                             <img src={img2} alt="" />
                             <input 
                                 type={showpassword ? 'text' : 'password'}
-                                placeholder='confirmar senha'
+                                placeholder='Confirmar senha'
                                 value={confirmSenha}
                                 onChange={e => setConfirmSenha(e.target.value)}
                                 onClick={limparMensagemErro}
