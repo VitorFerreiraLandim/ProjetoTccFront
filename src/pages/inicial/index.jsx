@@ -9,6 +9,7 @@ import cabelo4 from '../../assets/images/cabelo5.avif'
 import cabelo5 from '../../assets/images/escova.webp'
 import { Link } from 'react-router-dom'
 import { useState, useEffect } from 'react';
+import { Link as ScrollLink } from 'react-scroll'
 
 
 export default function HomePage() {
@@ -41,11 +42,14 @@ export default function HomePage() {
         <div className='div'>
             <div className='header'>
                 <img className='lene' src={lene} alt="" />
-                <Link className='Link'>sobre</Link>
-                <Link className='Link'>serviços</Link>
+                <ScrollLink to='sobre' smooth={true} duration={500} className='Link'>sobre</ScrollLink>
+                <ScrollLink to='servicos' smooth={true} duration={500} className='Link'>serviços</ScrollLink>
                 <Link to='/servicos' className='Link'>agendar</Link>
-                <Link className='Link'>contato</Link>
-                <Link to='/agendamentosCliente' className='Link'>agendamentos</Link>
+                <ScrollLink to='contato' smooth={true} duration={500} className='Link'>contato</ScrollLink>
+                <Link to={localStorage.getItem('USUARIO_ID') === '5' ?   '/AgendamentosAdm' : '/agendamentosCliente'} className='Link'>
+                agendamentos
+                </Link>
+
                 <Link onClick={openModal}><img className='perfil' src={perfil} alt="" /></Link>
                 
             </div>
@@ -56,9 +60,9 @@ export default function HomePage() {
                 </div>
                 <img className='img2' src={img1} alt="" />
             </div>
-            <div className='sobre' id='sobre'>
+            <div className='sobre' >
                 <h1>Aqui o seu cabelo se torna uma obra de arte</h1>
-                <div className='cards'>
+                <div id='sobre' className='cards'>
                     <div className='card1'>
                         <img src={cabelo1} alt="" />
                         <div className='p'>
@@ -77,9 +81,9 @@ export default function HomePage() {
                     </div>
                 </div>
             </div>
-            <div className='seviços'>
+            <div id='servicos' className='seviços'>
                 <h1>Serviços</h1>
-                <div className='servicoCard'>
+                <div  className='servicoCard'>
                     <div className='imgCortes'>
                         <div className='img1'>
                             <img src={cabelo5} alt="" />
@@ -97,7 +101,8 @@ export default function HomePage() {
                     <button>VER MAIS</button>
                 </div>
             </div>
-            <div className='contato'>
+            <div  id='contato' className='contato'>
+
                 <h1>contato</h1>
                 <div className='fuboca'>
                     <div className='informacoes'>

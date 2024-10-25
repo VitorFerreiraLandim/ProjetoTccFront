@@ -26,14 +26,13 @@ export default function RegisterPage() {
     const [mensagemSucesso, setMensagemSucesso] = useState('');
 
     async function verificarTelefone(numero) {
-        const apiKey = '46cfd2afb53f3f0e875e9c6cf7e463b4'; 
         const numeroComCodigo = numero.startsWith('+') ? numero : `+55${numero.replace(/\D/g, '')}`;
-        const url = `http://apilayer.net/api/validate?access_key=${apiKey}&number=${numeroComCodigo}`;
+        const url = `https://api.veriphone.io/v2/verify?phone=%2B${numeroComCodigo}&key=92738FD110F8419E8507FB7682EFA868`;
 
         try {
             const response = await axios.get(url);
             console.log('Resposta da API de telefone:', response.data);
-            return response.data.valid; 
+            return response.data.phone_valid; 
         } catch (error) {
             console.error('Erro ao verificar telefone:', error);
             return false;

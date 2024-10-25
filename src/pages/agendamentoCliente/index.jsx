@@ -116,8 +116,8 @@ export default function AgendamentosCliente() {
                 <div className='divisao'></div>
                 <div className='dir'>
                     <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d10334.777086337894!2d-46.709191277947156!3d-23.679695505774813!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce502d3b230a8d%3A0x89668535360273da!2sLene%20Cabeleireiros!5e0!3m2!1spt-BR!2sbr!4v1729645944119!5m2!1spt-BR!2sbr"
-                        width="72%" 
-                        height="240" 
+                        width="79%" 
+                        height="310" 
                         style={{border: '0', borderRadius: '2dvh'}}
                         allowFullScreen 
                         loading="lazy" 

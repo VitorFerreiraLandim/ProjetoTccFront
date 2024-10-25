@@ -170,13 +170,11 @@
     .dir{
         width: 50%;
         display: flex;
-
+        justify-content: center;
         flex-direction: column;
         align-items: center;
         position: relative;
-        .map{
-            margin-top: 9dvh;
-        }
+
         .card-info{
             display: flex;
             flex-direction: row;
@@ -185,7 +183,7 @@
             padding: 1dvh;
             border-radius: 1.6dvh;
             position: absolute; 
-            top: 25.6dvh;
+            top: 52.6dvh;
             z-index: 1;
             .txt{
                 display: flex;
