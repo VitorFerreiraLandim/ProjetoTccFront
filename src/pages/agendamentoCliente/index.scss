@@ -75,7 +75,7 @@
                         font-family: 'Roboto', sans-serif;
                         font-weight: 600;
                         transition: transform 0.3s ease;
-                        margin-left: 1dvh;
+                        margin-left: 4dvh;
                         &:hover {
                             transform: scale(1.05);
                         }
@@ -97,6 +97,16 @@
                 }
                 .finalizada{
                     background-color: #bebebe;
+                    font-family: 'Roboto', sans-serif;
+                    font-weight: 400;
+                    width: 12dvh; 
+                    text-align: center;
+                    color: #eceaea;
+                    border-radius: 0.4dvh; 
+                    margin-left: 4dvh;
+                    margin-top: 1.8dvh;
+                    font-size: 1.6dvh; 
+                    padding: 0.3dvh; 
                 }
 
                 .serviço {

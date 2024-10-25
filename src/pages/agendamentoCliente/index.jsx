@@ -2,7 +2,7 @@ import './index.scss';
 import { useEffect, useState } from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
-import lene from '../../assets/images/lene.png'
+import lene from '../../assets/images/lene.png';
 
 export default function AgendamentosCliente() {
     const [agendamentos, setAgendamentos] = useState([]);
@@ -22,7 +22,6 @@ export default function AgendamentosCliente() {
                 console.error('Erro ao carregar agendamentos:', error);
             }
         };
-
         fetchAgendamentos();
     }, []);
 
@@ -50,20 +49,38 @@ export default function AgendamentosCliente() {
     };
 
     const isAgendamentoFinalizado = (agendamento) => {
-        const agendamentoDate = new Date(agendamento.dia + ' ' + agendamento.hora);
-        return agendamentoDate < new Date();
-    };
 
+        const agendamentoDate = new Date(agendamento.dia);
+    
+        if (isNaN(agendamentoDate.getTime())) {
+            console.error('Data de agendamento inválida:', agendamentoDate);
+            return false; 
+        }
+    
+        const currentDate = new Date();
+    
+        console.log('Agendamento Date:', agendamentoDate);
+        console.log('Current Date:', currentDate);
+    
+        return agendamentoDate < currentDate;
+    };
+ 
     const Remarcar = async (id) => {
-        try {
-            await axios.delete(`http://localhost:5001/agendamento/${id}`);
-            setAgendamentos(agendamentos.filter(agendamento => agendamento.id !== id));
+        const agendamento = agendamentos.find(a => a.id === id);
+        
+        if (isAgendamentoFinalizado(agendamento)) {
             navigate('/servicos');
-        } catch (error) {
-            console.error('Erro ao desmarcar o agendamento:', error);
+        } else {
+            try {
+                await axios.delete(`http://localhost:5001/agendamento/${id}`);
+                setAgendamentos(agendamentos.filter(agendamento => agendamento.id !== id));
+                navigate('/servicos');
+            } catch (error) {
+                console.error('Erro ao desmarcar o agendamento:', error);
+            }
         }
     };
-
+    
     return (
         <div className='div-mae'>
             <div className='agenda'>
@@ -77,8 +94,10 @@ export default function AgendamentosCliente() {
                                 </p>
                                 <p className='serviço'>{agendamento.trabalho}</p>
                                 <div className='butao'>
-                                    <button className='b1' onClick={() => handleDesmarcarClick(agendamento.id)} disabled={isAgendamentoFinalizado(agendamento)}>Desmarcar</button>
-                                    <button className='b2' onClick={() => Remarcar(agendamento.id)} disabled={isAgendamentoFinalizado(agendamento)}>Remarcar</button>
+                                    {!isAgendamentoFinalizado(agendamento) && (
+                                        <button className='b1' onClick={() => handleDesmarcarClick(agendamento.id)}>Desmarcar</button>
+                                    )}
+                                    <button className='b2' onClick={() => Remarcar(agendamento.id)}>Remarcar</button>
                                 </div>
                             </div>
                             <div className='divisao2'></div>
@@ -92,27 +111,26 @@ export default function AgendamentosCliente() {
                             </div>
                         </div>
                     ))}
+
                 </div>
                 <div className='divisao'></div>
                 <div className='dir'>
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d10334.777086337894!2d-46.709191277947156!3d-23.679695505774813!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce502d3b230a8d%3A0x89668535360273da!2sLene%20Cabeleireiros!5e0!3m2!1spt-BR!2sbr!4v1729645944119!5m2!1spt-BR!2sbr"
-                    width="72%" 
-                    height="240" 
-                    style={{border: '0' , borderRadius:'2dvh'}}
-                    allowfullscreen 
-                    loading="lazy" 
-                    referrerpolicy="no-referrer-when-downgrade"
-                    className='map'
-                    >
-
-            </iframe>
-            <div className={`card-info ${isModalOpen ? 'hidden' : ''}`}>
-                    <img src={lene} alt="" />
-                    <div className='txt'>
-                        <p className='p1'>Lene Cabeleira</p>
-                        <p className='p2'>Av. Coronel Octaviano de Freitas Costa, 440 - Veleiros, São Paulo - SP, 04773-000</p>
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d10334.777086337894!2d-46.709191277947156!3d-23.679695505774813!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce502d3b230a8d%3A0x89668535360273da!2sLene%20Cabeleireiros!5e0!3m2!1spt-BR!2sbr!4v1729645944119!5m2!1spt-BR!2sbr"
+                        width="72%" 
+                        height="240" 
+                        style={{border: '0', borderRadius: '2dvh'}}
+                        allowFullScreen 
+                        loading="lazy" 
+                        referrerPolicy="no-referrer-when-downgrade"
+                        className='map'
+                    />
+                    <div className={`card-info ${isModalOpen ? 'hidden' : ''}`}>
+                        <img src={lene} alt="" />
+                        <div className='txt'>
+                            <p className='p1'>Lene Cabeleira</p>
+                            <p className='p2'>Av. Coronel Octaviano de Freitas Costa, 440 - Veleiros, São Paulo - SP, 04773-000</p>
+                        </div>
                     </div>
-            </div>
                 </div>
             </div>
 

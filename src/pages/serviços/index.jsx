@@ -6,7 +6,7 @@ import check from '../../assets/images/check.png';
 import x from '../../assets/images/x.png';
 import { Link } from 'react-router-dom';
 import Servico from '../../components/serviços';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 
@@ -22,8 +22,10 @@ export default function Servicos() {
     const [periodoSelecionado, setPeriodoSelecionado] = useState(null);
     const [offsetHora, setOffsetHora] = useState(0);
     const [servicosSelecionados, setServicosSelecionados] = useState([]);
+    const [horariosOcupados, setHorariosOcupados] = useState([]);
+
     const horasPorConjunto = 6;
-    const navigate = useNavigate()
+    const navigate = useNavigate();
 
     const servicosList = [
         { 'trabalho': 'Escova e Prancha', 'valor': '30,00' },
@@ -65,8 +67,6 @@ export default function Servicos() {
         setModalAdicionarServicoAberto(false);
     };
 
-    
-
     const confirmarSelecao = async () => {
         const checkboxes = document.querySelectorAll('.adi-sev input[type="checkbox"]');
         const novosServicosSelecionados = [];
@@ -97,11 +97,16 @@ export default function Servicos() {
     const obterDias = () => {
         const dias = [];
         const hoje = new Date();
+        const horaAtual = hoje.getHours(); 
+    
         for (let i = 0; i < 7; i++) {
             const data = new Date(hoje);
             data.setDate(hoje.getDate() + (indiceInicioDia + i));
             const nomeDia = data.toLocaleString('pt-BR', { weekday: 'short' });
-            const isDisabled = nomeDia === 'dom.' || nomeDia === 'seg.';
+    
+            const isHoje = i === 0;
+            const isDisabled = (isHoje && horaAtual >= 19) || nomeDia === 'dom.' || nomeDia === 'seg.';
+    
             dias.push({
                 dia: nomeDia,
                 data: data.getDate(),
@@ -111,6 +116,7 @@ export default function Servicos() {
         }
         return dias;
     };
+    
 
     const obterMesAno = () => {
         const hoje = new Date();
@@ -154,8 +160,17 @@ export default function Servicos() {
     const obterHorasExibidas = () => {
         const horas = obterHoras();
         const startIndex = offsetHora;
-        return horas.slice(startIndex, startIndex + horasPorConjunto);
+    
+        const horariosOcupadosFormatados = horariosOcupados.map(hora => {
+            const [h, m] = hora.split(':'); 
+            return `${h}:${m}`; 
+        });
+    
+        return horas
+            .slice(startIndex, startIndex + horasPorConjunto)
+            .filter(hora => !horariosOcupadosFormatados.includes(hora));
     };
+    
 
     const manejarHorasAnteriores = () => {
         setOffsetHora(prev => Math.max(prev - horasPorConjunto, 0));
@@ -178,13 +193,9 @@ export default function Servicos() {
             hora: horaSelecionada,
         };
 
-        console.log('Agendamento:', agendamento); 
-
         try {
             const url = `http://localhost:5001/agendamentos`;
             let resp = await axios.post(url, agendamento);
-            
-            console.log('Resposta da API:', resp); 
 
             if (resp.status === 201) {
                 setModalSucessoAberto(true);
@@ -201,6 +212,24 @@ export default function Servicos() {
     };
 
     const Linha = () => <div className="linha"></div>;
+
+    const buscarHorariosOcupados = async (dia) => {
+        try {
+            const response = await axios.get(`http://localhost:5001/disponibilidade/${dia}`);
+            console.log('Horários ocupados recebidos:', response.data); 
+            setHorariosOcupados(response.data);
+        } catch (error) {
+            console.error('Erro ao buscar horários ocupados:', error);
+        }
+    };
+    
+    useEffect(() => {
+        if (indiceDiaSelecionado !== null) {
+            const diaSelecionado = obterDias()[indiceDiaSelecionado]?.fullDate;
+            buscarHorariosOcupados(diaSelecionado);
+        }
+    }, [indiceDiaSelecionado]);
+    
 
     return (
         <div className='divmae'>
@@ -287,6 +316,9 @@ export default function Servicos() {
                                             <p>{hora}</p>
                                         </div>
                                     ))}
+                                    {obterHorasExibidas().length === 0 && (
+                                        <p className="sem-horarios">Nenhum horário disponível neste dia.</p>
+                                    )}
                                 </div>
                                 <a className='setaD' onClick={manejarProximasHoras}>
                                     <img className='imgD' src={seta} alt="Seta para direita" style={{ transform: 'rotate(180deg)' }} />
@@ -356,15 +388,12 @@ export default function Servicos() {
                         <h2>PARABÉNS!</h2>
                         <p>Agendamento realizado com sucesso!</p>
                         <div className='button'>
-                        <button className='b1' onClick={fecharModalCheck}>Fechar</button>
-                        <button className='b2' onClick={() => navigate('/AgendamentosCliente')}>Ver agenda</button>
+                            <button className='b1' onClick={fecharModalCheck}>Fechar</button>
+                            <button className='b2' onClick={() => navigate('/AgendamentosCliente')}>Ver agenda</button>
                         </div>
                     </div>
                 </div>
-
             )}
-            </div>
-
+        </div>
     );
 }
-
