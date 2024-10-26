@@ -11,6 +11,7 @@ import CodigoDeRedefinição from './pages/codigoDeRefinicao';
 import RedefinicaoNovaSenha from './pages/novaSenha';
 import ConfigurarConta from './pages/configConta';
 import AgendamentosCliente from './pages/agendamentoCliente';
+import AgendamentosAdm from './pages/agendamentosAdm';
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
@@ -27,6 +28,7 @@ root.render(
           <Route path='/novaSenha' element={<RedefinicaoNovaSenha/>}/>
           <Route path='/ConfigConta' element={<ConfigurarConta/>}/>
           <Route path='/AgendamentosCliente' element={<AgendamentosCliente/>}/>
+          <Route path='/AgendamentosAdm' element={<AgendamentosAdm/>}/>
         </Routes>
     </BrowserRouter>
   </React.StrictMode>

@@ -36,6 +36,7 @@ export default function LoginPage() {
             localStorage.setItem('USUARIO', resp.data.token)
             localStorage.setItem('USUARIO_ID', resp.data.id);
             localStorage.setItem('NOME_USUARIO', resp.data.nome);
+            localStorage.setItem('TELEFONE_USUARIO', resp.data.telefone);
             navigate('/inicio')
         }
 

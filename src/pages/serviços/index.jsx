@@ -160,16 +160,29 @@ export default function Servicos() {
     const obterHorasExibidas = () => {
         const horas = obterHoras();
         const startIndex = offsetHora;
-    
+        
         const horariosOcupadosFormatados = horariosOcupados.map(hora => {
             const [h, m] = hora.split(':'); 
             return `${h}:${m}`; 
         });
     
+        const hoje = new Date();
+        const diaSelecionado = obterDias()[indiceDiaSelecionado];
+    
+        const isHoje = diaSelecionado && diaSelecionado.fullDate === hoje.toISOString().split('T')[0];
+    
         return horas
             .slice(startIndex, startIndex + horasPorConjunto)
-            .filter(hora => !horariosOcupadosFormatados.includes(hora));
+            .filter(hora => {
+                if (isHoje) {
+                    const [h, m] = hora.split(':').map(Number);
+                    const horarioSelecionado = new Date(hoje.getFullYear(), hoje.getMonth(), hoje.getDate(), h, m);
+                    return horarioSelecionado >= hoje;
+                }
+                return !horariosOcupadosFormatados.includes(hora);
+            });
     };
+    
     
 
     const manejarHorasAnteriores = () => {
@@ -193,7 +206,7 @@ export default function Servicos() {
             hora: horaSelecionada,
         };
 
-        try {
+        try {   
             const url = `http://localhost:5001/agendamentos`;
             let resp = await axios.post(url, agendamento);
 
@@ -206,6 +219,40 @@ export default function Servicos() {
             console.error('Erro ao agendar:', error);
         }
     };
+
+    const finalizarAgendamentoAdm = async () => {
+        const clienteNome = localStorage.getItem('NOME_USUARIO');
+        const clienteTelefone = localStorage.getItem('TELEFONE_USUARIO');
+    
+        const agendamentoAdm = {
+            trabalho: servicosSelecionados.map(s => s.trabalho).join(', '),
+            valor: servicosSelecionados.reduce((total, s) => total + parseFloat(s.valor.replace(',', '.')), 0).toFixed(2),
+            dia: obterDias()[indiceDiaSelecionado]?.fullDate, 
+            hora: horaSelecionada,
+            cliente_nome: clienteNome,
+            cliente_telefone: clienteTelefone 
+        };
+    
+        try {
+            const url = `http://localhost:5001/agendamentos_adm`;
+            let resp = await axios.post(url, agendamentoAdm);
+    
+            if (resp.status === 201) {
+                setModalSucessoAberto(true);
+                fecharModal();
+                setServicosSelecionados([]);    
+            }
+        } catch (error) {
+            console.error('Erro ao agendar no admin:', error);
+        }
+    };
+
+    const confirmarAgendamento = async () => {
+        await finalizarAgendamento();
+        await finalizarAgendamentoAdm(); 
+    };
+    
+    
 
     const fecharModalCheck = () => {
         setModalSucessoAberto(false);
@@ -317,7 +364,7 @@ export default function Servicos() {
                                         </div>
                                     ))}
                                     {obterHorasExibidas().length === 0 && (
-                                        <p className="sem-horarios">Nenhum horário disponível neste dia.</p>
+                                        <p className="sem-horarios">Nenhum horário disponível </p>
                                     )}
                                 </div>
                                 <a className='setaD' onClick={manejarProximasHoras}>
@@ -351,7 +398,7 @@ export default function Servicos() {
                                 <p className='p1'>Total :</p>
                                 <p className='p2'>R$ {servicosSelecionados.reduce((total, s) => total + parseFloat(s.valor.replace(',', '.')), 0).toFixed(2)}</p>
                             </div>
-                            <button onClick={finalizarAgendamento}>Agendar</button>
+                            <button onClick={confirmarAgendamento}>Agendar</button>
                         </div>
                     </div>
                 </div>

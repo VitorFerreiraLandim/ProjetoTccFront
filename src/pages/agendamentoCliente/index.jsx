@@ -49,8 +49,10 @@ export default function AgendamentosCliente() {
     };
 
     const isAgendamentoFinalizado = (agendamento) => {
-
-        const agendamentoDate = new Date(agendamento.dia);
+        console.log('Dia:', agendamento.dia);
+        console.log('Hora:', agendamento.hora);
+    
+        const agendamentoDate = new Date(`${agendamento.dia}T${agendamento.hora}`);
     
         if (isNaN(agendamentoDate.getTime())) {
             console.error('Data de agendamento inválida:', agendamentoDate);
@@ -58,12 +60,14 @@ export default function AgendamentosCliente() {
         }
     
         const currentDate = new Date();
-    
         console.log('Agendamento Date:', agendamentoDate);
         console.log('Current Date:', currentDate);
     
         return agendamentoDate < currentDate;
     };
+    
+    
+    
  
     const Remarcar = async (id) => {
         const agendamento = agendamentos.find(a => a.id === id);

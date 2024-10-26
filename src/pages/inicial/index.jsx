@@ -10,11 +10,13 @@ import cabelo5 from '../../assets/images/escova.webp'
 import { Link } from 'react-router-dom'
 import { useState, useEffect } from 'react';
 import { Link as ScrollLink } from 'react-scroll'
+import { useNavigate } from 'react-router-dom';
 
 
 export default function HomePage() {
     const [isModalOpen, setIsModalOpen] = useState(false);
 
+    const navigate = useNavigate();
 
     const openModal = () => {
         setIsModalOpen(true);
@@ -37,7 +39,9 @@ export default function HomePage() {
 
     const nome = localStorage.getItem('NOME_USUARIO')
 
-
+    const verMais = () => {
+        navigate('/servicos')
+    }
     return (
         <div className='div'>
             <div className='header'>
@@ -46,17 +50,14 @@ export default function HomePage() {
                 <ScrollLink to='servicos' smooth={true} duration={500} className='Link'>serviços</ScrollLink>
                 <Link to='/servicos' className='Link'>agendar</Link>
                 <ScrollLink to='contato' smooth={true} duration={500} className='Link'>contato</ScrollLink>
-                <Link to={localStorage.getItem('USUARIO_ID') === '5' ?   '/AgendamentosAdm' : '/agendamentosCliente'} className='Link'>
-                agendamentos
-                </Link>
-
+                <Link to={localStorage.getItem('USUARIO_ID') === '18' ?   '/AgendamentosAdm' : '/agendamentosCliente'} className='Link'>agendamentos</Link>
                 <Link onClick={openModal}><img className='perfil' src={perfil} alt="" /></Link>
                 
             </div>
             <div className='principal'>
                 <div className='botao'>
                     <h1>CORTES MORDENOS!</h1>
-                    <button>AGENDE JÁ</button>
+                    <button onClick={verMais}>AGENDE JÁ</button>
                 </div>
                 <img className='img2' src={img1} alt="" />
             </div>
@@ -98,7 +99,7 @@ export default function HomePage() {
                             <p>Progressiva</p>
                         </div>
                     </div>
-                    <button>VER MAIS</button>
+                    <button onClick={verMais}>VER MAIS</button>
                 </div>
             </div>
             <div  id='contato' className='contato'>
