@@ -101,7 +101,8 @@ export default function Servicos() {
     
         for (let i = 0; i < 7; i++) {
             const data = new Date(hoje);
-            data.setDate(hoje.getDate() + (indiceInicioDia + i));
+            data.setDate(hoje.getDate() + (indiceInicioDia + i)); 
+    
             const nomeDia = data.toLocaleString('pt-BR', { weekday: 'short' });
     
             const isHoje = i === 0;
@@ -110,12 +111,17 @@ export default function Servicos() {
             dias.push({
                 dia: nomeDia,
                 data: data.getDate(),
-                fullDate: data.toISOString().split('T')[0], 
+                fullDate: new Date(data.setDate(data.getDate() - 1)).toISOString().split('T')[0], // Ajuste aqui
                 disabled: isDisabled
             });
         }
+        console.log("Dias gerados:", dias);
         return dias;
     };
+    
+    
+    
+
     
 
     const obterMesAno = () => {
@@ -144,7 +150,9 @@ export default function Servicos() {
 
     const manejarClickDia = (index) => {
         setIndiceDiaSelecionado(index);
+        console.log("Dia selecionado index:", index);
     };
+    
 
     const manejarClickPeriodo = (periodo) => {
         setPeriodoSelecionado(periodo);
@@ -168,6 +176,9 @@ export default function Servicos() {
     
         const hoje = new Date();
         const diaSelecionado = obterDias()[indiceDiaSelecionado];
+        if (diaSelecionado) {
+            console.log('Dia selecionado:', diaSelecionado.fullDate);
+        }
     
         const isHoje = diaSelecionado && diaSelecionado.fullDate === hoje.toISOString().split('T')[0];
     

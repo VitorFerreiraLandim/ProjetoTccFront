@@ -14,12 +14,13 @@
         border-radius: 2dvh; 
         box-shadow: 0 8px 150px rgba(0, 0, 0, 0.3);
         justify-content: center;
-        overflow-y: auto;
+        
         .esq2{
             width: 50%;
             display: flex;
             align-items: center;
             flex-direction: column;
+            overflow-y: auto;
         .my-agenda {
             margin: 3dvh;
             font-family: 'Roboto', sans-serif;

@@ -3,6 +3,8 @@ import { useEffect, useState } from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 import lene from '../../assets/images/lene.png';
+import { format, parseISO } from 'date-fns';
+import { ptBR } from 'date-fns/locale';
 
 export default function AgendamentosCliente() {
     const [agendamentos, setAgendamentos] = useState([]);
@@ -17,6 +19,7 @@ export default function AgendamentosCliente() {
             try {
                 const url = `http://localhost:5001/agendamento?cliente_id=${clienteId}`;
                 const resp = await axios.get(url);
+                console.log('Agendamentos recebidos:', resp.data);
                 setAgendamentos(resp.data);
             } catch (error) {
                 console.error('Erro ao carregar agendamentos:', error);
@@ -47,28 +50,47 @@ export default function AgendamentosCliente() {
         setIsModalOpen(false);
         setSelectedId(null);
     };
-
-    const isAgendamentoFinalizado = (agendamento) => {
-        console.log('Dia:', agendamento.dia);
-        console.log('Hora:', agendamento.hora);
     
-        const agendamentoDate = new Date(`${agendamento.dia}T${agendamento.hora}`);
+    const formatDia = (data, hora) => {
+        if (!hora) {
+            console.error('Hora não definida');
+            return new Date(data).toLocaleDateString('pt-BR'); // Apenas retorna a data se a hora não estiver definida
+        }
+    
+        const [horas, minutos] = hora.split(':').map(Number);
+        const parsedDate = new Date(data);
+        parsedDate.setHours(horas - 3, minutos); // Ajusta para UTC-3
+        return parsedDate.toLocaleDateString('pt-BR'); // Formato: DD/MM/AAAA
+    };
+    
+    
+    
+    
+    
+    const isAgendamentoFinalizado = (agendamento) => {
+        if (!agendamento) return false;
+    
+        const agendamentoDate = new Date(agendamento.dia); 
+        const hora = agendamento.hora;
+    
+        console.log('Data original:', agendamento.dia);
+        console.log('Data formatada:', formatDia(agendamento.dia, hora));
     
         if (isNaN(agendamentoDate.getTime())) {
             console.error('Data de agendamento inválida:', agendamentoDate);
-            return false; 
+            return false;
         }
     
-        const currentDate = new Date();
-        console.log('Agendamento Date:', agendamentoDate);
-        console.log('Current Date:', currentDate);
+        const [horas, minutos] = hora.split(':');
+        agendamentoDate.setHours(horas - 3, minutos); 
     
+        const currentDate = new Date();
         return agendamentoDate < currentDate;
     };
     
     
     
- 
+
     const Remarcar = async (id) => {
         const agendamento = agendamentos.find(a => a.id === id);
         
@@ -84,7 +106,7 @@ export default function AgendamentosCliente() {
             }
         }
     };
-    
+
     return (
         <div className='div-mae'>
             <div className='agenda'>
@@ -115,7 +137,6 @@ export default function AgendamentosCliente() {
                             </div>
                         </div>
                     ))}
-
                 </div>
                 <div className='divisao'></div>
                 <div className='dir'>
