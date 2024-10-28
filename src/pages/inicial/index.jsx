@@ -14,6 +14,7 @@ import { useNavigate } from 'react-router-dom';
 
 
 export default function HomePage() {
+    const [token, setToken] = useState(null);
     const [isModalOpen, setIsModalOpen] = useState(false);
 
     const navigate = useNavigate();

@@ -103,7 +103,7 @@
         .b2 {
           height: 3.5rem;
           width: 12rem;
-          border-radius: 1rem;
+          border-radius: 4rem;
           background: linear-gradient(55deg, #6f07cf 35%, #a010b3);
           border: none;
           color: #fff;
@@ -150,7 +150,7 @@
     .login {
       .informacoes,
       .bem-vinda {
-        width: 90%;
+        width: 100%;
         border-radius: 2rem;
       }
 
@@ -241,5 +241,32 @@
         }
       }
     }
+  }
+}
+
+.spinner-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.7); 
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 999;
+
+  .spinner {
+      border: 8px solid #6f07cf;
+      border-top: 8px solid #c3c9cc;
+      border-radius: 50%;
+      width: 80px;
+      height: 80px;
+      animation: spin 1s linear infinite;
+  }
+  
+  @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
   }
 }

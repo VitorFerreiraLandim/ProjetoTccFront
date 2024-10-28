@@ -22,12 +22,22 @@
       .informaçoes {
         background-color: #fff;
         width: 100%;
-        max-width: 800px; 
+        max-width: 1200px; 
         padding: 4rem; 
         border-radius: 2rem;
         box-shadow: 0 8px 150px rgba(0, 26, 255, 0.3);
         text-align: center;
-  
+        
+        .error-message{
+          font-family: "Inter", sans-serif;
+          font-weight: 500;
+          color: rgb(189, 36, 9);
+          img{
+              width: 2dvh;
+              height: 2dvh;
+              margin-right: 1dvh;
+          }
+      }
         h1 {
           font-size: 2.5rem; 
           font-family: "Inter", sans-serif;

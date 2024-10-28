@@ -76,7 +76,6 @@ export default function AgendamentosAdm() {
                                 </div>
                                 <div className='divisao2'></div>
                                 <div className='botoes'>
-                                    <button className='b1'>desmarcar</button>
                                     <button className='b2'>mensagem</button>
                                 </div>
                             </div>
@@ -100,7 +99,6 @@ export default function AgendamentosAdm() {
                                 </div>
                                 <div className='divisao2'></div>
                                 <div className='botoes'>
-                                    <button className='b1'>desmarcar</button>
                                     <button className='b2'>mensagem</button>
                                 </div>
                             </div>

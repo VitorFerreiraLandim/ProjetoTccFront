@@ -11,6 +11,8 @@ export default function AgendamentosCliente() {
     const [isModalOpen, setIsModalOpen] = useState(false);
     const [selectedId, setSelectedId] = useState(null);
     const navigate = useNavigate();
+   
+    
 
     useEffect(() => {
         const clienteId = localStorage.getItem('USUARIO_ID');
@@ -35,13 +37,23 @@ export default function AgendamentosCliente() {
 
     const handleDesmarcar = async () => {
         try {
-            await axios.delete(`http://localhost:5001/agendamento/${selectedId}`);
+            const delet = await axios.delete(`http://localhost:5001/agendamento/${selectedId}`);
             setAgendamentos(agendamentos.filter(agendamento => agendamento.id !== selectedId));
             setIsModalOpen(false);
             setSelectedId(null);
         } catch (error) {
             console.error('Erro ao desmarcar agendamento:', error);
             setIsModalOpen(false);
+            setSelectedId(null);
+        }
+    };
+
+    const handleDesmarcarAdm = async () => {
+        try {
+            await axios.delete(`http://localhost:5001/agendamento_adm/${selectedId}`)
+            setSelectedId(null);
+        } catch (error) {
+            console.error('Erro ao desmarcar agendamento:', error);;
             setSelectedId(null);
         }
     };
@@ -54,16 +66,21 @@ export default function AgendamentosCliente() {
     const formatDia = (data, hora) => {
         if (!hora) {
             console.error('Hora não definida');
-            return new Date(data).toLocaleDateString('pt-BR'); // Apenas retorna a data se a hora não estiver definida
+            return new Date(data).toLocaleDateString('pt-BR'); 
         }
     
         const [horas, minutos] = hora.split(':').map(Number);
         const parsedDate = new Date(data);
-        parsedDate.setHours(horas - 3, minutos); // Ajusta para UTC-3
-        return parsedDate.toLocaleDateString('pt-BR'); // Formato: DD/MM/AAAA
+        parsedDate.setHours(horas - 3, minutos); 
+        return parsedDate.toLocaleDateString('pt-BR'); 
     };
     
     
+    const handleMultipleClicks = (id) => {
+       handleDesmarcar(id); 
+       handleDesmarcarAdm(id);
+
+    };
     
     
     
@@ -164,7 +181,7 @@ export default function AgendamentosCliente() {
                     <div className='modal-content'>
                         <h2>Confirmação</h2>
                         <p>Você tem certeza que deseja desmarcar este agendamento?</p>
-                        <button className='sim' onClick={handleDesmarcar}>Sim</button>
+                        <button className='sim' onClick={handleMultipleClicks}>Sim</button>
                         <button className='nao' onClick={handleCancel}>Não</button>
                     </div>
                 </div>

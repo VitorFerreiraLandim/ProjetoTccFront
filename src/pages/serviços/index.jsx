@@ -111,19 +111,15 @@ export default function Servicos() {
             dias.push({
                 dia: nomeDia,
                 data: data.getDate(),
-                fullDate: new Date(data.setDate(data.getDate() - 1)).toISOString().split('T')[0], // Ajuste aqui
+                fullDate: new Date(data.setDate(data.getDate())).toISOString().split('T')[0], 
                 disabled: isDisabled
             });
         }
         console.log("Dias gerados:", dias);
         return dias;
     };
-    
-    
-    
 
     
-
     const obterMesAno = () => {
         const hoje = new Date();
         hoje.setDate(hoje.getDate() + indiceInicioDia);
@@ -263,8 +259,6 @@ export default function Servicos() {
         await finalizarAgendamentoAdm(); 
     };
     
-    
-
     const fecharModalCheck = () => {
         setModalSucessoAberto(false);
     };

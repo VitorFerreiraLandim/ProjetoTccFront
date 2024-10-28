@@ -2,15 +2,15 @@ import './index.scss';
 import { Link, useNavigate } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import axios from 'axios';
-
+import exclamacao from '../../assets/images/exclamation.png';
 export default function CodigoDeRedefinição() {
     const [code, setCode] = useState(['', '', '', '', '', '']);
-    const [codigoEnviado, setCodigoEnviado] = useState(null); // Armazena o código enviado
+    const [codigoEnviado, setCodigoEnviado] = useState(null); 
+    const [mensagemErro, setMensagemErro] = useState('');
     const navigate = useNavigate();
 
     useEffect(() => {
-        // Aqui você pode buscar o código enviado, por exemplo, armazenando em localStorage
-        const codigo = localStorage.getItem('codigoEnviado'); // Supondo que você tenha armazenado o código enviado no localStorage
+        const codigo = localStorage.getItem('codigoEnviado'); 
         if (codigo) {
             setCodigoEnviado(codigo);
         }
@@ -54,8 +54,12 @@ export default function CodigoDeRedefinição() {
         if (completeCode === codigoEnviado) {
             navigate('/novaSenha');
         } else {
-            alert('Código incorreto. Tente novamente.'); 
+            setMensagemErro('Código incorreto. Tente novamente.'); 
         }
+    };
+
+    const limparMensagemErro = () => {
+        setMensagemErro('');
     };
 
     return (
@@ -65,7 +69,7 @@ export default function CodigoDeRedefinição() {
                     <h1>Confira seu E-mail</h1>
                     <p>Enviamos o código de redefinição de senha para seu e-mail, insira o código abaixo</p>
                     
-                    <div className='codigo-inputs'>
+                    <div  className='codigo-inputs'>
                         {code.map((digit, index) => (
                             <input
                                 key={index}
@@ -75,10 +79,12 @@ export default function CodigoDeRedefinição() {
                                 value={digit}
                                 onChange={(e) => handleChange(index, e.target.value)}
                                 className='codigo-input'
+                                onClick={limparMensagemErro}
                             />
                         ))}
                     </div>
-
+                    {mensagemErro && <div className='error-message'><img src={exclamacao} alt="" />{mensagemErro}</div>}
+                    
                     <div className='botao'> 
                         <button onClick={handleConfirm} className='b2'>Confirmar</button>
                     </div>             

@@ -12,6 +12,13 @@ import { useState } from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
 
+// Spinner Component
+const Spinner = () => (
+    <div className="spinner-overlay">
+        <div className="spinner"></div>
+    </div>
+);
+
 export default function RegisterPage() {
     const [nome, setNome] = useState('');
     const [telefone, setTelefone] = useState('');
@@ -24,6 +31,7 @@ export default function RegisterPage() {
     const [mensagemErroSenha, setMensagemErroSenha] = useState('');
     const [modalAberto, setModalAberto] = useState(false);
     const [mensagemSucesso, setMensagemSucesso] = useState('');
+    const [carregando, setCarregando] = useState(false); 
 
     async function verificarTelefone(numero) {
         const numeroComCodigo = numero.startsWith('+') ? numero : `+55${numero.replace(/\D/g, '')}`;
@@ -45,8 +53,6 @@ export default function RegisterPage() {
         try {
             const response = await axios.get(url);
             console.log('Resposta da API de email:', response.data);
-            
-            
             return response.data.data.status === "valid"; 
         } catch (error) {
             console.error('Erro ao verificar email:', error);
@@ -54,49 +60,59 @@ export default function RegisterPage() {
         }
     }
     
-    
-    
     async function cadastrar() {
+        setCarregando(true); 
         if (senha !== confirmSenha) {
+            setCarregando(false);
             setMensagemErroSenha('As senhas não coincidem!');
             return;
         }
-    
+
         const telefoneValido = await verificarTelefone(telefone);
         const emailValido = await verificarEmail(email);
-    
+
         if (!telefoneValido) {
+            setCarregando(false);
             setMensagemErro('Número de telefone inválido. Verifique e tente novamente.');
+            
             return;
         }
-    
+
         if (!emailValido) {
+            setCarregando(false);
             setMensagemErro('E-mail não é válido. Verifique e tente novamente.');
+            
             return;
         }
-    
+
         setMensagemErro('');
-    
+        
+
         let userData = {
             "nome": nome,
             "telefone": telefone,
             "email": email,
             "senha": senha,
         };
-    
+
         const url = 'http://localhost:5001/cadastro';
         try {
             let resp = await axios.post(url, userData);
             setMensagemSucesso('Cadastro concluído. Id: ' + resp.data.novoId);
+            setCarregando(false);
             setModalAberto(true);
         } catch (error) {
             console.error('Erro ao cadastrar usuário:', error);
             if (error.response && error.response.data.erro) {
+                setCarregando(false);
                 setMensagemErro(`Email ou telefone já cadastrados.`); 
             } else {
+                setCarregando(false);
                 setMensagemErro('Erro ao realizar cadastro. Tente novamente.');
             }
-        }
+        } 
+           
+        
     }
     
     const limparMensagemErro = () => {
@@ -109,6 +125,7 @@ export default function RegisterPage() {
 
     return (
         <div className='div3'>
+            {carregando && <Spinner />}
             <div className='login'>
                 <div className='informaçoes'>
                     <h1> Cadastre-se</h1>

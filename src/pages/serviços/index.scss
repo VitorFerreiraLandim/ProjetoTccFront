@@ -565,5 +565,96 @@ body {
         }
     }
 
+@media (max-width: 1550px){
+    .divmae{
+        .modal-overlay{
+            .modal-content{
+                width: 60%;
+     
+            }
+        }
+    }
+}
 
+@media (max-width: 1200px){
+    .divmae{
+        .modal-overlay{
+            .modal-content{
+                width: 60%;
+                .horario-marcado{
+                    .horas{
+                        .tempo{
+                            .tem{
+                                padding: 1dvh 2dvh 1dvh 2dvh;
+                            }
+                        }
+                    }}
+            }
+        }
+    }
+}
+@media (max-width: 1350px){
+    .divmae{
+        .modal-overlay{
+            .modal-content{
+                width: 60%;
+                .horario-marcado{
+                    .horas{
+                        .tempo{
+                            .tem{
+                                padding: 1dvh 2dvh 1dvh 2dvh;
+                            }
+                        }
+                    }}
+            }
+        }
+    }
+}
 
+@media (max-width: 1024px){
+    .divmae{
+        .modal-overlay{
+            .modal-content{
+                width: 80%;
+                .horario-marcado{
+                    .horas{
+                        .tempo{
+                            .tem{
+                                padding: 1dvh 2dvh 1dvh 2dvh;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    
+ }
+
+ @media (max-width: 768px) {
+    .divmae{
+        .modal-overlay{
+            .modal-content{
+                width: 90%;
+                .horario-marcado{
+                    .horas{
+                        .tempo{
+                            .tem{
+                                padding: 1dvh 0.7dvh 1dvh 0.7dvh;
+                            }
+                        }
+                    }
+                }
+                .dias{
+                    .dia{
+                        width: 7.1dvh;
+                        height: 6dvh;
+                        border-radius: 0.5dvh;
+                        margin-top: 4dvh;
+                    }
+                }
+                
+            }
+        }
+    }
+ }

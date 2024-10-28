@@ -163,7 +163,7 @@
                 gap: 17dvh;
                 background-color: #7451ad ;
                 height: 46dvh;
-                width: 180dvh;
+                width: 170dvh;
                 display: flex;
                 align-items: center;
                 border-radius: 5dvh;
@@ -198,7 +198,7 @@
                 gap: 17dvh;
                 background-color: #7451ad ;
                 height: 46dvh;
-                width: 180dvh;
+                width: 170dvh;
                 display: flex;
                 align-items: center;
                 border-radius: 5dvh;
@@ -646,6 +646,606 @@
         
         }
     }
-    
 
  }
+
+@media (max-width: 1600px) {
+    .div{
+        .header{
+            width: 80%;
+        }
+        .principal{
+            .img2{
+                height: 65dvh;
+            }
+            .botao{
+                right:24dvh;
+                h1{
+                   margin-bottom: 3dvh;
+                    font-size: 8dvh;
+                }
+                button{
+                    margin-bottom: 9dvh;
+                }
+            }
+        }
+        .sobre{
+            .cards{
+                    .card1{
+                        gap: 12dvh;
+                        height: 43dvh;
+                        width: 140dvh;
+                        border-radius: 5dvh;
+                        margin-bottom: 6dvh;
+                        img{
+                            width: 50dvh;
+                            height: 35dvh;
+                            border-radius: 7dvh;
+                            margin-left: 10dvh;
+                        }
+                        .p{               
+                            p{
+                                font-size: 3.1dvh;
+                                width: 60dvh;
+                                margin-bottom: 2dvh;
+                            }
+                        }
+                }
+                .card2{
+                    gap: 15dvh;
+                    height: 43dvh;
+                    width: 140dvh;
+                    border-radius: 5dvh;
+                    margin-bottom: 6dvh;
+                    padding: 1dvh;
+                    img{
+                        width: 50dvh;
+                        height: 35dvh;
+                        border-radius: 7dvh;
+                        margin-left: -7dvh;
+                    }
+                    .p{
+                        p{
+                            font-size: 3.1dvh;
+                            width: 60dvh;
+                            margin-bottom: 2dvh;
+                            margin-left: 10dvh;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 1290px) {
+    .div{
+        .header{
+            width: 90%;
+            gap: 1.5dvh;
+            .Link{
+                font-size: 2.3dvh;
+            }
+            .Lene{
+                display: none;
+            }
+        }
+        .principal{
+            .img2{
+                height: 62dvh;
+            }
+            .botao{
+                right:19dvh;
+                h1{
+                    margin-bottom: 3dvh;
+                     font-size: 7dvh;
+                 }
+                 button{
+                     margin-bottom: 9dvh;
+                     padding: 15px 20px;
+                     font-size: 4dvh;
+                 }
+            }
+        }
+        .sobre{
+            h1{
+                font-size: 6dvh;
+                width: 40dvh;
+                margin-top: 4dvh;
+            }
+            .cards{
+                    .card1{
+                        gap: 10dvh;
+                        height: 43dvh;
+                        width: 130dvh;
+                        border-radius: 5dvh;
+                        margin-bottom: 6dvh;
+                        img{
+                            width: 50dvh;
+                            height: 35dvh;
+                            border-radius: 7dvh;
+                            margin-left: 10dvh;
+                        }
+                        .p{               
+                            p{
+                                font-size: 2.6dvh;
+                                width: 50dvh;
+                                margin-bottom: 2dvh;
+                            }
+                        }
+                }
+                .card2{
+                    gap: 15dvh;
+                    height: 43dvh;
+                    width: 130dvh;
+                    border-radius: 5dvh;
+                    img{
+                        width: 50dvh;
+                        height: 35dvh;
+                        border-radius: 7dvh;
+                        margin-left: -7dvh;
+                    }
+                    .p{
+                        p{
+                            font-size: 2.6dvh;
+                            width: 50dvh;
+                            margin-left: 10dvh;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 1180px) {
+    .div{
+        .header{
+            width: 90%;
+            .Link{
+                font-size: 2.2dvh;
+            }
+            .Lene{
+                display: none;
+            }
+        }
+        .principal{
+            .img2{
+                height: 57dvh;
+            }
+            .botao{
+                right:17dvh;
+                h1{
+                    margin-bottom: 3dvh;
+                    font-size: 6.8dvh;
+                    margin-left: 13.5dvh;
+                 }
+                 button{
+                     margin-bottom: 7dvh;
+                     padding: 15px 20px;
+                     font-size: 3.8dvh;
+                 }
+            }
+        }
+        .sobre{
+            .cards{
+                    .card1{
+                        height: 40dvh;
+                        width: 120dvh;
+                        border-radius: 5dvh;
+                        margin-bottom: 6dvh;
+                        img{
+                            width: 48dvh;
+                            height: 34dvh;
+                            border-radius: 6.1dvh;
+                        }
+                        .p{               
+                            p{
+                                font-size: 2.4dvh;
+                                width: 47dvh;
+                                margin-bottom: 2dvh;
+                            }
+                        }
+                }
+                .card2{
+
+                    height: 40dvh;
+                    width: 120dvh;
+                    border-radius: 5dvh;
+                    img{
+                        width: 48dvh;
+                        height: 34dvh;
+                        border-radius: 6.1dvh;
+                    }
+                    .p{
+                        p{
+                            font-size: 2.4dvh;
+                            width: 47dvh;
+                            margin-left: 10dvh;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 1120px) {
+    .div{
+        .header{
+            width:88%;
+            gap: 1.5dvh;
+            .Link{
+                font-size: 2.2dvh;
+            }
+            .Lene{
+                display: none;
+            }
+        }
+        .principal{
+            .img2{
+                height: 53dvh;
+            }
+            .botao{
+                right:14dvh;
+                h1{
+                    margin-bottom: 3dvh;
+                    font-size: 6.6dvh;
+                    margin-left: 12dvh;
+                 }
+                 button{
+                     margin-bottom: 4dvh;
+                     padding: 15px 20px;
+                     font-size: 3.5dvh;
+                 }
+            }
+        }
+        .sobre{
+            .cards{
+                    .card1{
+                        height: 38dvh;
+                        width: 110dvh;
+                        border-radius: 5dvh;
+                        margin-bottom: 6dvh;
+                        img{
+                            width: 42dvh;
+                            height: 30dvh;
+                            border-radius: 5.7dvh;
+                            margin-left: 7dvh;
+                        }
+                        .p{               
+                            p{
+                                font-size: 2.4dvh;
+                                width: 47dvh;
+                                margin-bottom: 2dvh;
+                            }
+                        }
+                }
+                .card2{
+
+                    height: 38dvh;
+                    width: 110dvh;
+                    border-radius: 5dvh;
+                    img{
+                        width: 42dvh;
+                        height: 30dvh;
+                        border-radius: 5.7dvh;
+                    }
+                    .p{
+                        p{
+                            font-size: 2.4dvh;
+                            width: 47dvh;
+                            margin-left: 8dvh;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 1024px) {
+    .div{
+        .header{
+            img{
+                margin-left: 1dvh;
+            }
+        }
+        .principal{
+            .img2{
+                height: 48dvh;
+            }
+            .botao{
+                right:12dvh;
+                h1{
+                    margin-bottom: 3dvh;
+                    font-size: 6.4dvh;
+                 }
+                 button{
+                     margin-bottom: 3dvh;
+                     padding: 15px 20px;
+                     font-size: 3.1dvh;
+                 }
+            }
+        }
+        .sobre{
+            .cards{
+                    .card1{
+                        height: 35dvh;
+                        width: 97dvh;
+                        border-radius: 5dvh;
+                        margin-bottom: 6dvh;
+                        gap: 7dvh;
+                        img{
+                            width: 38dvh;
+                            height: 27dvh;
+                            border-radius: 5.7dvh;
+                            margin-left: 7dvh;
+                        }
+                        .p{               
+                            p{
+                                font-size: 2.1dvh;
+                                width: 42dvh;
+                                margin-bottom: 2dvh;
+                            }
+                        }
+                }
+                .card2{
+                    height: 35dvh;
+                    width: 97dvh;
+                    border-radius: 5dvh;
+                    gap: 10dvh;
+                    img{
+                        width: 38dvh;
+                        height: 27dvh;
+                        border-radius: 5.7dvh;
+                    }
+                    .p{
+                        p{
+                            font-size: 2.1dvh;
+                            width: 42dvh;
+                            margin-left: 8dvh;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 900px) {
+    .div{
+        .header{
+            width: 90%;
+            img{
+                .lene{
+                    display: none;
+                    margin-left: 1dvh;
+                }
+                
+            }
+        }
+        .principal{
+            .img2{
+                height: 41dvh;
+            }
+            .botao{
+                right:10dvh;
+                h1{
+                    margin-bottom: 3dvh;
+                    font-size: 5.5dvh;
+                    margin-left: 10dvh;
+                 }
+                 button{
+                     margin-bottom: 1dvh;
+                     padding: 15px 20px;
+                     font-size: 2.5dvh;
+                 }
+            }
+        }
+        .sobre{
+            h1{
+                font-size: 5dvh;
+                width: 40dvh;
+                margin-top: 3dvh;
+            }
+            .cards{
+                    .card1{
+                        height: 31dvh;
+                        width: 80dvh;
+                        border-radius: 5dvh;
+                        margin-bottom: 6dvh;
+                        gap: 6dvh;
+                        img{
+                            width: 34dvh;
+                            height: 23dvh;
+                            border-radius: 5dvh;
+                            margin-left: 4dvh;
+                        }
+                        .p{               
+                            p{
+                                font-size: 1.9dvh;
+                                width: 38dvh;
+                                margin-bottom: 2dvh;
+                            }
+                        }
+                }
+                .card2{
+                    height: 31dvh;
+                    width: 80dvh;
+                    border-radius: 5dvh;
+                    gap: 8dvh;
+                    img{
+                        width: 34dvh;
+                            height: 23dvh;
+                            border-radius: 5dvh;
+                    }
+                    .p{
+                        p{
+                            font-size: 1.9dvh;
+                                width: 38dvh;
+                            margin-left: 4dvh;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 740px) {
+    .div{
+        .header{
+            width: 90%;  
+            img{
+               display: none;
+               
+            }
+            .Link{
+                font-size: 2dvh;
+                margin-left:2dvh;
+            }
+            
+        }
+        .principal{
+            .img2{
+                height: 35dvh;
+            }
+            .botao{
+                right:8dvh;
+                h1{
+                    margin-bottom: 2dvh;
+                    font-size: 4.5dvh;
+                    margin-left: 8dvh;
+                 }
+                 button{
+                     margin-bottom: 0.3dvh;
+                     padding: 12px 17px;
+                     font-size: 2dvh;
+                 }
+            }
+        }
+        .sobre{
+            .cards{
+                    .card1{
+                        height: 28dvh;
+                        width: 69dvh;
+                        border-radius: 5dvh;
+                        margin-bottom: 6dvh;
+                        gap: 4dvh;
+                        img{
+                            width: 29dvh;
+                            height: 18dvh;
+                            border-radius: 4dvh;
+                            margin-left: 4dvh;
+                        }
+                        .p{               
+                            p{
+                                font-size: 1.7dvh;
+                                width: 34dvh;
+                                margin-bottom: 2dvh;
+                            }
+                        }
+                }
+                .card2{
+                    height: 28dvh;
+                    width: 69dvh;
+                    border-radius: 5dvh;
+                    gap: 8dvh;
+                    img{
+                        width: 29dvh;
+                        height: 18dvh;
+                        border-radius: 4dvh;
+                    }
+                    .p{
+                        p{
+                            font-size: 1.7dvh;
+                            width: 34dvh;
+                            margin-left: 2dvh;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 640px) {
+    .div{
+        .header{
+            width: 95%;
+            img{
+               display: none;       
+            }
+            .Link{
+                font-size: 2dvh;
+                margin-left:1dvh;
+            }
+        }
+        .principal{
+            .img2{
+                height: 28dvh;
+            }
+            .botao{
+                right:4.5dvh;
+                h1{
+                    margin-bottom: 2dvh;
+                    font-size: 3.7dvh;
+                    margin-left: 6dvh;
+                 }
+                 button{
+                     margin-bottom: -1dvh;
+                     padding: 12px 17px;
+                     font-size: 1.6dvh;
+                 }
+            }
+        }
+        .sobre{
+            h1{
+                font-size: 5dvh;
+                width: 32dvh;
+                margin-top: 2dvh;
+            }
+            .cards{
+                    .card1{
+                        height: 23dvh;
+                        width: 53dvh;
+                        border-radius: 4dvh;
+                        margin-bottom: 6dvh;
+                        gap: 3dvh;
+                        img{
+                            width: 22dvh;
+                            height: 15dvh;
+                            border-radius: 3dvh;
+                            margin-left: 2dvh;
+                        }
+                        .p{               
+                            p{
+                                font-size: 1.3dvh;
+                                width: 26dvh;
+                                margin-bottom: 2dvh;
+                            }
+                        }
+                }
+                .card2{
+                    height: 23dvh;
+                    width: 53dvh;
+                    border-radius: 4dvh;
+                    gap: 8dvh;
+                    img{
+                        width: 22dvh;
+                            height: 15dvh;
+                            border-radius: 3dvh;
+                    }
+                    .p{
+                        p{
+                            font-size: 1.3dvh;
+                            width: 26dvh;
+                            margin-left: 2dvh;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
