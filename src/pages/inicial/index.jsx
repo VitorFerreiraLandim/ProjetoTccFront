@@ -100,7 +100,7 @@ export default function HomePage() {
                             <p>Progressiva</p>
                         </div>
                     </div>
-                    <button onClick={verMais}>VER MAIS</button>
+                    <button className='vermais' onClick={verMais}>VER MAIS</button>
                 </div>
             </div>
             <div  id='contato' className='contato'>

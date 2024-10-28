@@ -647,7 +647,7 @@
         }
     }
 
- }
+    }
 
 @media (max-width: 1600px) {
     .div{
@@ -715,6 +715,61 @@
                 }
             }
         }
+        .seviços{
+            .servicoCard{
+                height: 84dvh;
+                width: 130dvh;
+                .imgCortes{
+                    display: flex;
+                    flex-direction: row;
+                    gap: 7dvh;
+                    margin-top: 9dvh;
+                  .img1{
+                    img{
+                        height: 38dvh;
+                        width: 36dvh;
+                        border-radius: 1dvh;
+                    }
+                    p{
+                        font-size: 3.6dvh;
+                        width: 40dvh;
+                        margin-top: 3.5dvh;                                 
+                    }
+                  }
+                  .img2{
+                    margin-bottom:3.8dvh; 
+                    img{
+                        height: 38dvh;
+                        width: 36dvh;
+                    border-radius: 1dvh; 
+                    }            
+                  p{   
+                    font-size: 3.6dvh;
+                    margin-top: 3.5dvh;
+                }
+                  }
+                  .img3{
+                    margin-bottom: 3.8dvh;
+                    img{
+                        height: 38dvh;
+                        width: 36dvh;
+                    border-radius: 1dvh;
+                    }               
+                    p{
+                        font-size: 3.6dvh;                    
+                        margin-top: 3.5dvh;
+                    }
+                  }
+                }
+                button{
+                    padding: 2.3dvh 6.5dvh 2.3dvh 6.5dvh;
+                    border-radius: 2.6dvh;
+                    font-size: 3.5dvh;
+                    margin-top: 5dvh;    
+                }
+            }
+        }
+        
     }
 }
 
@@ -795,6 +850,60 @@
                 }
             }
         }
+        .seviços{
+            .servicoCard{
+                height: 83dvh;
+                width: 130dvh;
+                .imgCortes{
+                    display: flex;
+                    flex-direction: row;
+                    gap: 7dvh;
+                    margin-top: 9dvh;
+                  .img1{
+                    img{
+                        height: 38dvh;
+                        width: 36dvh;
+                        border-radius: 1dvh;
+                    }
+                    p{
+                        font-size: 3.6dvh;
+                        width: 40dvh;
+                        margin-top: 3.5dvh;                                 
+                    }
+                  }
+                  .img2{
+                    margin-bottom:3.8dvh; 
+                    img{
+                        height: 38dvh;
+                        width: 36dvh;
+                    border-radius: 1dvh; 
+                    }            
+                  p{   
+                    font-size: 3.6dvh;
+                    margin-top: 3.5dvh;
+                }
+                  }
+                  .img3{
+                    margin-bottom: 3.8dvh;
+                    img{
+                        height: 38dvh;
+                        width: 36dvh;
+                    border-radius: 1dvh;
+                    }               
+                    p{
+                        font-size: 3.6dvh;                    
+                        margin-top: 3.5dvh;
+                    }
+                  }
+                }
+                button{
+                    padding: 2.3dvh 6.5dvh 2.3dvh 6.5dvh;
+                    border-radius: 2.6dvh;
+                    font-size: 3.5dvh;
+                    margin-top: 5dvh;    
+                }
+            }
+        }
     }
 }
 
@@ -864,6 +973,60 @@
                             margin-left: 10dvh;
                         }
                     }
+                }
+            }
+        }
+        .seviços{
+            .servicoCard{
+                height: 80dvh;
+                width: 120dvh;
+                .imgCortes{
+                    display: flex;
+                    flex-direction: row;
+                    gap: 6dvh;
+                    margin-top: 9dvh;
+                  .img1{
+                    img{
+                        height: 36dvh;
+                        width: 33dvh;
+                        border-radius: 1dvh;
+                    }
+                    p{
+                        font-size: 3.3dvh;
+                        width: 40dvh;
+                        margin-top: 3.5dvh;                                 
+                    }
+                  }
+                  .img2{
+                    margin-bottom:3.8dvh; 
+                        img{
+                            height: 36dvh;
+                            width: 33dvh;
+                            border-radius: 1dvh; 
+                        }            
+                        p{   
+                            font-size: 3.3dvh;
+                            margin-top: 3.5dvh;
+                        }
+                  }
+                  .img3{
+                    margin-bottom: 3.8dvh;
+                    img{
+                    height: 36dvh;
+                    width: 33dvh;
+                    border-radius: 1dvh;
+                    }               
+                    p{
+                        font-size: 3.3dvh;                    
+                        margin-top: 3.5dvh;
+                    }
+                  }
+                }
+                button{
+                    padding: 2.3dvh 6.5dvh 2.3dvh 6.5dvh;
+                    border-radius: 2.6dvh;
+                    font-size: 3.5dvh;
+                    margin-top: 5dvh;    
                 }
             }
         }
@@ -941,6 +1104,73 @@
                 }
             }
         }
+        .seviços{
+            h1{
+                font-size: 10dvh;
+                height: 12dvh;
+                width: 53dvh;
+                border-radius: 1.5dvh;
+                margin-bottom: 10dvh;
+                margin-top: 1dvh;
+
+            }
+            .servicoCard{
+                margin-bottom: 5dvh;
+                height: 72dvh;
+                width: 110dvh;
+                .imgCortes{
+                    display: flex;
+                    flex-direction: row;
+                    gap: 4dvh;
+                    margin-top: 9dvh;
+                  .img1{
+                    margin-left: -4dvh;
+                    img{
+                        height: 30dvh;
+                        width: 26dvh;
+                        border-radius: 1dvh;
+                        
+                    }
+                    p{
+                        font-size: 3.3dvh;
+                        width: 40dvh;
+                        margin-top: 3.5dvh;                                 
+                    }
+                  }
+                  .img2{
+                    margin-left: -6dvh;
+                    margin-bottom:3.8dvh; 
+                        img{
+                            height: 30dvh;
+                            width: 26dvh;
+                            border-radius: 1dvh; 
+                        }            
+                        p{   
+                            font-size: 3.3dvh;
+                            margin-top: 3.5dvh;
+                        }
+                  }
+                  .img3{
+                    margin-bottom: 3.8dvh;
+                    img{
+                        height: 30dvh;
+                        width: 26dvh;
+                    border-radius: 1dvh;
+                    }               
+                    p{
+                        font-size: 3.3dvh;                    
+                        margin-top: 3.5dvh;
+                    }
+                  }
+                }
+                button{
+                    padding: 2.3dvh 6.5dvh 2.3dvh 6.5dvh;
+                    border-radius: 2.6dvh;
+                    font-size: 3.5dvh;
+                    margin-top: 5dvh;    
+                }
+            }
+        }
     }
 }
 
@@ -1007,6 +1237,63 @@
                             margin-left: 8dvh;
                         }
                     }
+                }
+            }
+        }
+        .seviços{
+            .servicoCard{
+                height: 64dvh;
+                width: 93dvh;
+                .imgCortes{
+                    display: flex;
+                    flex-direction: row;
+                    gap: 4dvh;
+                    margin-top: 5dvh;
+                  .img1{
+                    margin-left: -9dvh;
+                    img{
+                        height: 27dvh;
+                        width: 23dvh;
+                        border-radius: 1dvh;
+                        
+                    }
+                    p{
+                        font-size: 2.6dvh;
+                        width: 40dvh;
+                        margin-top: 3.5dvh;                                 
+                    }
+                  }
+                  .img2{
+                    margin-left: -8dvh;
+                    margin-bottom:3.8dvh; 
+                        img{
+                            height: 27dvh;
+                        width: 23dvh;
+                            border-radius: 1dvh; 
+                        }            
+                        p{   
+                            font-size: 2.6dvh;
+                            margin-top: 3.5dvh;
+                        }
+                  }
+                  .img3{
+                    margin-bottom: 3.8dvh;
+                    img{
+                        height: 27dvh;
+                        width: 23dvh;
+                        border-radius: 1dvh;
+                    }               
+                    p{
+                        font-size: 2.6dvh;                    
+                        margin-top: 3.5dvh;
+                    }
+                  }
+                }
+                button{
+                    padding: 2dvh 6dvh 2dvh 6dvh;
+                    border-radius: 2.6dvh;
+                    font-size: 3dvh;
+                    margin-top: 5dvh;    
                 }
             }
         }
@@ -1090,6 +1377,73 @@
                 }
             }
         }
+        .seviços{
+            h1{
+                font-size: 8dvh;
+                height: 10dvh;
+                width: 40dvh;
+                border-radius: 1.5dvh;
+                margin-bottom: 7dvh;
+                margin-top: -1dvh;
+
+            }
+            .servicoCard{
+                margin-bottom: 5dvh;
+                height: 54dvh;
+                width: 80dvh;
+                .imgCortes{
+                    display: flex;
+                    flex-direction: row;
+                    gap: 4dvh;
+                    margin-top: 5dvh;
+                  .img1{
+                    margin-left: -9dvh;
+                    img{
+                        height: 24dvh;
+                        width: 21dvh;
+                        border-radius: 1dvh;
+                        
+                    }
+                    p{
+                        font-size: 2.6dvh;
+                        width: 40dvh;
+                        margin-top: 3.5dvh;                                 
+                    }
+                  }
+                  .img2{
+                    margin-left: -8dvh;
+                    margin-bottom:3.8dvh; 
+                        img{
+                            height: 24dvh;
+                            width: 21dvh;
+                            border-radius: 1dvh; 
+                        }            
+                        p{   
+                            font-size: 2.6dvh;
+                            margin-top: 3.5dvh;
+                        }
+                  }
+                  .img3{
+                    margin-bottom: 3.8dvh;
+                    img{
+                        height: 24dvh;
+                        width: 21dvh;
+                        border-radius: 1dvh;
+                    }               
+                    p{
+                        font-size: 2.6dvh;                    
+                        margin-top: 3.5dvh;
+                    }
+                  }
+                }
+                button{
+                    padding: 1dvh 5dvh 1dvh 5dvh;
+                    border-radius: 2dvh;
+                    font-size: 3dvh;
+                    margin-top: 3dvh;    
+                }
+            }
+        }
     }
 }
 
@@ -1164,6 +1518,73 @@
                             margin-left: 2dvh;
                         }
                     }
+                }
+            }
+        }
+        .seviços{
+            h1{
+                font-size: 6dvh;
+                height: 8dvh;
+                width: 31dvh;
+                border-radius: 1.5dvh;
+                margin-bottom: 4dvh;
+                margin-top: -3dvh;
+
+            }
+            .servicoCard{
+                margin-bottom: 5dvh;
+                height: 48dvh;
+                width: 66dvh;
+                .imgCortes{
+                    display: flex;
+                    flex-direction: row;
+                    gap: 3dvh;
+                    margin-top: 4dvh;
+                  .img1{
+                    margin-left: -13dvh;
+                    img{
+                        height: 18dvh;
+                        width: 15dvh;
+                        border-radius: 1dvh;
+                        margin-bottom: 1dvh;
+                    }
+                    p{
+                        font-size: 2dvh;
+                        width: 40dvh;
+                        margin-top: 3dvh;                                 
+                    }
+                  }
+                  .img2{
+                    margin-left: -12dvh;
+                    margin-bottom:3.8dvh; 
+                        img{
+                            height: 18dvh;
+                        width: 15dvh;
+                            border-radius: 1dvh; 
+                        }            
+                        p{   
+                            font-size: 2dvh;
+                            margin-top: 3.5dvh;
+                        }
+                  }
+                  .img3{
+                    margin-bottom: 3.8dvh;
+                    img{
+                        height: 18dvh;
+                        width: 15dvh;
+                        border-radius: 1dvh;
+                    }               
+                    p{
+                        font-size: 2dvh;                    
+                        margin-top: 3.5dvh;
+                    }
+                  }
+                }
+                button{
+                    padding: 1dvh 5dvh 1dvh 5dvh;
+                    border-radius: 2dvh;
+                    font-size: 3dvh;
+                    margin-top: 3dvh;    
                 }
             }
         }
@@ -1244,6 +1665,63 @@
                             margin-left: 2dvh;
                         }
                     }
+                }
+            }
+        }
+        .seviços{
+            .servicoCard{
+                height: 43dvh;
+                width: 53dvh;
+                .imgCortes{
+                    display: flex;
+                    flex-direction: row;
+                    gap: 3dvh;
+                    margin-top: 4dvh;
+                  .img1{
+                    margin-left: -13dvh;
+                    img{
+                        height: 16dvh;
+                        width: 13dvh;
+                        border-radius: 1dvh;
+                        margin-bottom: 2dvh;
+                    }
+                    p{
+                        font-size: 2dvh;
+                        width: 40dvh;
+                        margin-bottom: 1dvh;                         
+                    }
+                  }
+                  .img2{
+                    margin-left: -13dvh;
+                    margin-bottom:3.8dvh; 
+                        img{
+                            height: 16dvh;
+                            width: 13dvh;
+                            border-radius: 1dvh; 
+                        }            
+                        p{   
+                            font-size: 2dvh;
+                            margin-top: 3.5dvh;
+                        }
+                  }
+                  .img3{
+                    margin-bottom: 3.8dvh;
+                    img{
+                        height: 16dvh;
+                        width: 13dvh;
+                        border-radius: 1dvh;
+                    }               
+                    p{
+                        font-size: 2dvh;                    
+                        margin-top: 3.5dvh;
+                    }
+                  }
+                }
+                button{
+                    padding: 1dvh 3.5dvh 1dvh 3.5dvh;
+                    border-radius: 2dvh;
+                    font-size: 2.3dvh;
+                    margin-top: 3dvh;
                 }
             }
         }
