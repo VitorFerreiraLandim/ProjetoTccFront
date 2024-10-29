@@ -257,7 +257,12 @@ body {
                               
                                 transition: background-color 0.3s, color 0.3s;
                             }
-                            
+                            .sem-horarios{
+                                font-family: "Hind Siliguri", sans-serif;
+                                font-weight: 500;
+                                margin-left: 1.5dvh;
+                                margin-right: 1.5dvh;
+                            }
                             .tem.selected {
                                 background-color: #7C57B8; 
                                 color: white; 
@@ -371,7 +376,18 @@ body {
                 display: flex;
                 align-items: center;
                 flex-direction: column;
-                margin-top: 3dvh;
+                margin-top: 1dvh;
+                .error-message{
+                    
+                    font-family: "Hind Siliguri", sans-serif;
+                    font-weight: 400;
+                    color: #d10303;
+                    img{
+                        width: 16px;
+                        height: 16px;
+                        margin-right: 1dvh;
+                    }
+                }
                 .total{
                     display: flex;
                     flex-direction: row;

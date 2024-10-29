@@ -196,3 +196,26 @@
         }
     }
 }
+
+@media (max-width: 1024px) {
+    .div2{
+        .login{
+            .informaçoes{
+                border-radius: 4dvh;
+            }
+        }
+    }
+}
+
+@media (max-width: 624px) {
+    .div2{
+        .login{
+            .informaçoes{
+                
+                .senha{
+                   margin-left: 23dvh;
+                }
+            }
+        }
+    }
+}

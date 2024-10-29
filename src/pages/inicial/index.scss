@@ -769,7 +769,110 @@
                 }
             }
         }
+        .contato{
+            margin-top: 5dvh;
+            h1{
+                height: 19dvh;
+                font-size: 8dvh;
+            }
+            .fuboca{
+                margin-top: 7dvh;
+                gap: 10dvh;   
+                .informacoes{
+                    margin-left: 30dvh;
+                    margin-top: 6dvh;
+                    .visita{
+                        margin-top: 0.6dvh;
+                        font-size: 3dvh;
+                        width: 50dvh;
+                    }
+                    .local{
+                        font-size: 1.7dvh;
+                        width: 30dvh;
+                        margin-top: 4dvh;
+                    }
+                    .tel{
+                        font-size: 2.3dvh;
+                        margin-top: 5.5dvh;
+                        gap: 1.4dvh;
+                        .p1{
+                        }
+                        .p2{
+                        }
+                    }
+                    .hora{
+                        font-size: 2.3dvh;
+                        margin-top: 2dvh;
+                        gap: 1.4dvh;
+                        .p1{
+                        }
+                        .p2{
+                        }
+                    }
+                    .hora2{
+                        font-size: 2.3dvh;
+                        margin-top: 2dvh;
+                        gap: 1.4dvh;
+                        margin-bottom: 9dvh;
+                        .p1{
+                            
+                        }
+                        .p2{
+                        }
+                    }
+                }
+                .mensagem{
+                    .h2{
+                        h2{
+                        font-size: 5dvh;
+                        }
+                    }
+                    .inputs{ 
+                        margin-left: 3dvh;
+                        
+                    .nomeEmail{
+                        margin-top: 4dvh;
+                        
+                        .in1 {
+                            padding: 1dvh 3dvh;
+                            margin-right: 3.5dvh;
+                        }
+                        
+                        .in2{
+                            padding: 1dvh 3dvh;
+                            margin-right: 6dvh;                      
+                            font-size: 1.7dvh;
+                        }
+                    }
+                    .in3 {
+                        width: 67.5dvh; 
+                        height: 21dvh;
+                        padding: 2dvh 2dvh;
+                        margin-top: 2dvh;
+                        font-size: 1.6dvh;
+                    }
+                }
+                button{             
+                    padding: 1.1dvh 30.4dvh;
+                    margin: 2dvh 0dvh 10dvh 3dvh;
+                    font-size: 2dvh;
+                }
+                }
+            }
+        }
         
+    }
+}
+
+@media (max-width: 1550px) {
+    .div{
+        .contato{
+            .fuboca{ 
+                .informacoes{
+                    margin-left: 10dvh;
+                }
+            }
+        }
     }
 }
 
@@ -904,6 +1007,98 @@
                 }
             }
         }
+        .contato{
+            margin-top: 5dvh;
+            h1{
+                height: 19dvh;
+                font-size: 8dvh;
+            }
+            .fuboca{
+                margin-top: 4dvh;
+                gap: 10dvh;   
+                .informacoes{
+                    margin-left: 10dvh;
+                    margin-top: -1dvh;
+                    .visita{
+                        margin-top: 0.6dvh;
+                        font-size: 3dvh;
+                        width: 50dvh;
+                    }
+                    .local{
+                        font-size: 1.7dvh;
+                        width: 30dvh;
+                        margin-top: 4dvh;
+                    }
+                    .tel{
+                        font-size: 2.3dvh;
+                        margin-top: 4dvh;
+                        gap: 1.4dvh;
+                        .p1{
+                        }
+                        .p2{
+                        }
+                    }
+                    .hora{
+                        font-size: 2.3dvh;
+                        margin-top: 2dvh;
+                        gap: 1.4dvh;
+                        .p1{
+                        }
+                        .p2{
+                        }
+                    }
+                    .hora2{
+                        font-size: 2.3dvh;
+                        margin-top: 2dvh;
+                        gap: 1.4dvh;
+                        margin-bottom: 9dvh;
+                        .p1{
+                            
+                        }
+                        .p2{
+                        }
+                    }
+                }
+                .mensagem{
+                    .h2{
+                        h2{
+                        font-size: 5dvh;
+                        }
+                    }
+                    .inputs{ 
+                        margin-left: 3dvh;
+                        
+                    .nomeEmail{
+                        margin-top: 4dvh;
+                        display: flex;
+                        flex-direction: row;
+                        .in1 {
+                            padding: 1dvh 2.2dvh;
+                            margin-right: 3.5dvh;
+                        }
+                        
+                        .in2{
+                            padding: 1dvh 2.2dvh;
+                            margin-right: 6dvh;                      
+                            font-size: 1.7dvh;
+                        }
+                    }
+                    .in3 {
+                        width: 64.5dvh; 
+                        height: 21dvh;
+                        padding: 2dvh 2dvh;
+                        margin-top: 2dvh;
+                        font-size: 1.6dvh;
+                    }
+                }
+                button{             
+                    padding: 1.1dvh 29dvh;
+                    margin: 2dvh 0dvh 10dvh 3dvh;
+                    font-size: 2dvh;
+                }
+                }
+            }
+        }
     }
 }
 
@@ -983,7 +1178,7 @@
                 .imgCortes{
                     display: flex;
                     flex-direction: row;
-                    gap: 6dvh;
+                    gap: 3dvh;
                     margin-top: 9dvh;
                   .img1{
                     img{
@@ -1027,6 +1222,85 @@
                     border-radius: 2.6dvh;
                     font-size: 3.5dvh;
                     margin-top: 5dvh;    
+                }
+            }
+        }
+        .contato{
+            margin-top: 5dvh;
+            h1{
+                height: 19dvh;
+                font-size: 8dvh;
+            }
+            .fuboca{
+                margin-top: 4dvh;
+                gap: 1dvh;   
+                .informacoes{
+                    margin-left: 8dvh;
+                    margin-top: 5dvh;
+                    .visita{
+                        margin-top: 0.6dvh;
+                        font-size: 2.7dvh;
+                        width: 50dvh;
+                    }
+                    .local{
+                        font-size: 1.6dvh;
+                        width: 25dvh;
+                        margin-top: 4dvh;
+                    }
+                    .tel{
+                        font-size: 2.2dvh;
+                        margin-top: 4dvh;
+                        gap: 1.4dvh;
+                    }
+                    .hora{
+                        font-size: 2.2dvh;
+                        margin-top: 2dvh;
+                        gap: 1.4dvh;
+                    }
+                    .hora2{
+                        font-size: 2.2dvh;
+                        margin-top: 2dvh;
+                        gap: 1.4dvh;
+                        margin-bottom: 9dvh;
+                    }
+                }
+                .mensagem{
+                    .h2{
+                        h2{
+                        font-size: 5dvh;
+                        }
+                    }
+                    .inputs{ 
+                        margin-left: 3dvh;
+                        
+                    .nomeEmail{
+                        margin-top: 4dvh;
+                        display: flex;
+                        flex-direction: row;
+                        .in1 {
+                            padding: 1dvh 1dvh;
+                            margin-right: 3dvh;
+                        }
+                        
+                        .in2{
+                            padding: 1dvh 1dvh;
+                            margin-right: 6dvh;                      
+                            font-size: 1.7dvh;
+                        }
+                    }
+                    .in3 {
+                        width: 58.8dvh; 
+                        height: 18dvh;
+                        padding: 2dvh 2dvh;
+                        margin-top: 2dvh;
+                        font-size: 1.6dvh;
+                    }
+                }
+                button{             
+                    padding: 1.1dvh 26dvh;
+                    margin: 2dvh 0dvh 10dvh 3dvh;
+                    font-size: 2dvh;
+                }
                 }
             }
         }
@@ -1171,6 +1445,88 @@
                 }
             }
         }
+        .contato{
+            margin-top: 1dvh;
+            h1{
+                height: 19dvh;
+                font-size: 8dvh;
+            }
+            .fuboca{
+                margin-top: -1dvh;
+                gap: 0dvh;   
+                .informacoes{
+                    margin-left: 9dvh;
+                    margin-top: 5dvh;
+                    .visita{
+                        margin-top: 0.6dvh;
+                        font-size: 2.4dvh;
+                        width: 50dvh;
+                    }
+                    .local{
+                        font-size: 1.3dvh;
+                        width: 20dvh;
+                        margin-top: 4dvh;
+                    }
+                    .tel{
+                        font-size: 2dvh;
+                        margin-top: 4dvh;
+                        gap: 1.4dvh;
+                    }
+                    .hora{
+                        font-size: 2dvh;
+                        margin-top: 2dvh;
+                        gap: 1.4dvh;
+                    }
+                    .hora2{
+                        font-size: 2dvh;
+                        margin-top: 2dvh;
+                        gap: 1.4dvh;
+                        margin-bottom: 9dvh;
+                    }
+                }
+                .mensagem{
+                    .h2{
+                        h2{
+                        font-size: 4dvh;
+                        }
+                    }
+                    .inputs{ 
+                        margin-left: -4dvh;
+                        
+                    .nomeEmail{
+                        margin-top: 4dvh;
+                        display: flex;
+                        flex-direction: row;
+                        .in1 {
+                            padding: 1dvh 1dvh;
+                            margin-right: 3dvh;
+                            width: 26.5dvh;
+                        }
+                        
+                        .in2{
+                            padding: 1dvh 1dvh;
+                            margin-right: 6dvh;                      
+                            font-size: 1.7dvh;
+                            width: 26.5dvh;
+                        }
+                    }
+                    .in3 {
+                        width: 55.8dvh; 
+                        height: 18dvh;
+                        padding: 2dvh 2dvh;
+                        margin-top: 2dvh;
+                        font-size: 1.6dvh;
+                    }
+                }
+                button{             
+                    padding: 1.1dvh 24.5dvh;
+                    margin: 2dvh 0dvh 5dvh -4dvh;
+                    font-size: 2dvh;
+                    
+                }
+                }
+            }
+        }
     }
 }
 
@@ -1294,6 +1650,89 @@
                     border-radius: 2.6dvh;
                     font-size: 3dvh;
                     margin-top: 5dvh;    
+                }
+            }
+        }
+        .contato{
+            margin-top: 0dvh;
+            h1{
+                height: 19dvh;
+                font-size: 6.3dvh;
+                margin-top: -3dvh;
+            }
+            .fuboca{
+                margin-top: -1dvh;
+                gap: 0dvh;   
+                .informacoes{
+                    margin-left: 7dvh;
+                    margin-top: 4dvh;
+                    .visita{
+                        margin-top: 0.6dvh;
+                        font-size: 2.2dvh;
+                        width: 50dvh;
+                    }
+                    .local{
+                        font-size: 1.3dvh;
+                        width: 20dvh;
+                        margin-top: 3dvh;
+                    }
+                    .tel{
+                        font-size: 1.7dvh;
+                        margin-top: 3dvh;
+                        gap: 1.4dvh;
+                    }
+                    .hora{
+                        font-size: 1.7dvh;
+                        margin-top: 2dvh;
+                        gap: 1.4dvh;
+                    }
+                    .hora2{
+                        font-size: 1.7dvh;
+                        margin-top: 2dvh;
+                        gap: 1.4dvh;
+                    }
+                }
+                .mensagem{
+                    .h2{
+                        h2{
+                        font-size: 3.3dvh;
+                        margin-left: -19dvh;
+                        }
+                    }
+                    .inputs{ 
+                        margin-left: -12dvh;
+                        
+                    .nomeEmail{
+                        margin-top: 4dvh;
+                        display: flex;
+                        flex-direction: row;
+                        .in1 {
+                            padding: 1dvh 1dvh;
+                            margin-right: 3dvh;
+                            width: 22.5dvh;
+                        }
+                        
+                        .in2{
+                            padding: 1dvh 1dvh;
+                            margin-right: 5dvh;                      
+                            font-size: 1.7dvh;
+                            width: 22.5dvh;
+                        }
+                    }
+                    .in3 {
+                        width: 48dvh; 
+                        height: 14dvh;
+                        padding: 2dvh 2dvh;
+                        margin-top: 2dvh;
+                        font-size: 1.6dvh;
+                    }
+                }
+                button{             
+                    padding: 1dvh 20.8dvh;
+                    margin: 2dvh 0dvh 5dvh -12dvh;
+                    font-size: 2dvh;
+                    
+                }
                 }
             }
         }
@@ -1444,6 +1883,91 @@
                 }
             }
         }
+        .contato{
+            margin-top: 0dvh;
+            h1{
+                height: 19dvh;
+                font-size: 6dvh;
+                margin-top: -4dvh;
+            }
+            .fuboca{
+                margin-top: -4dvh;
+                gap: 0dvh;   
+                .informacoes{
+                    margin-left: 3dvh;
+                    margin-top: 4dvh;
+                    .visita{
+                        margin-top: 0.6dvh;
+                        font-size: 2dvh;
+                        width: 50dvh;
+                    }
+                    .local{
+                        font-size: 1.3dvh;
+                        width: 20dvh;
+                        margin-top: 3dvh;
+                    }
+                    .tel{
+                        font-size: 1.7dvh;
+                        margin-top: 3dvh;
+                        gap: 1.4dvh;
+                    }
+                    .hora{
+                        font-size: 1.7dvh;
+                        margin-top: 2dvh;
+                        gap: 1.4dvh;
+                    }
+                    .hora2{
+                        font-size: 1.7dvh;
+                        margin-top: 2dvh;
+                        gap: 1.4dvh;
+                    }
+                }
+                .mensagem{
+                    .h2{
+                        h2{
+                        font-size: 3dvh;
+                        margin-left: -23dvh;
+                        }
+                    }
+                    .inputs{ 
+                        margin-left: -16dvh;
+                        
+                    .nomeEmail{
+                        margin-top: 2dvh;
+                        display: flex;
+                        flex-direction: row;
+                        .in1 {
+                            padding: 1dvh 1dvh;
+                            margin-right: 3dvh;
+                            width: 20dvh;
+                            height: 4dvh;
+                        }
+                        
+                        .in2{
+                            padding: 1dvh 1dvh;
+                            margin-right: 5dvh;                      
+                            font-size: 1.7dvh;
+                            width: 20dvh;
+                            height: 4dvh;
+                        }
+                    }
+                    .in3 {
+                        width: 43dvh; 
+                        height: 14dvh;
+                        padding: 2dvh 2dvh;
+                        margin-top: 2dvh;
+                        font-size: 1.6dvh;
+                    }
+                }
+                button{             
+                    padding: 0.5dvh 18.2dvh;
+                    margin: 1dvh 0dvh 4dvh -16dvh;
+                    font-size: 2dvh;
+                    
+                }
+                }
+            }
+        }
     }
 }
 
@@ -1588,6 +2112,92 @@
                 }
             }
         }
+        .contato{
+            margin-top: 0dvh;
+            h1{
+                height: 19dvh;
+                font-size: 5dvh;
+                margin-top: -4dvh;
+            }
+            .fuboca{
+                margin-top: -5dvh;
+                gap: 0dvh;   
+                .informacoes{
+                    margin-left: 3dvh;
+                    margin-top: 3dvh;
+                    .visita{
+                        margin-top: 0.6dvh;
+                        font-size: 1.6dvh;
+                        width: 50dvh;
+                    }
+                    .local{
+                        font-size: 1.3dvh;
+                        width: 20dvh;
+                        margin-top: 3dvh;
+                    }
+                    .tel{
+                        font-size: 1.3dvh;
+                        margin-top: 3dvh;
+                        gap: 1.4dvh;
+                    }
+                    .hora{
+                        font-size: 1.3dvh;
+                        margin-top: 2dvh;
+                        gap: 1.4dvh;
+                    }
+                    .hora2{
+                        font-size: 1.3dvh;
+                        margin-top: 2dvh;
+                        gap: 1.4dvh;
+                    }
+                }
+                .mensagem{
+                    .h2{
+                        h2{
+                        font-size: 2.5dvh;
+                        margin-left: -34dvh;
+                        }
+                    }
+                    .inputs{ 
+                        margin-left: -23dvh;
+                        
+                    .nomeEmail{
+                        margin-top: 2dvh;
+                        display: flex;
+                        flex-direction: row;
+                        .in1 {
+                            padding: 1dvh 1dvh;
+                            margin-right: 1dvh;
+                            width: 18dvh;
+                            height: 3dvh;
+                            font-size: 1.4dvh;
+                        }
+                        
+                        .in2{
+                            padding: 1dvh 1dvh;
+                            margin-right: 5dvh;                      
+                            width: 18dvh;
+                            height: 3dvh;
+                            font-size: 1.4dvh;;
+                        }
+                    }
+                    .in3 {
+                        width: 37dvh; 
+                        height: 11dvh;
+                        padding: 2dvh 2dvh;
+                        margin-top: 2dvh;
+                        font-size: 1.6dvh;
+                    }
+                }
+                button{             
+                    padding: 0.5dvh 15.2dvh;
+                    margin: 1dvh 0dvh 4dvh -23dvh;
+                    font-size: 2dvh;
+                    
+                }
+                }
+            }
+        }
     }
 }
 
@@ -1722,6 +2332,92 @@
                     border-radius: 2dvh;
                     font-size: 2.3dvh;
                     margin-top: 3dvh;
+                }
+            }
+        }
+        .contato{
+            margin-top: 0dvh;
+            h1{
+                height: 19dvh;
+                font-size: 4dvh;
+                margin-top: -6dvh;
+            }
+            .fuboca{
+                margin-top: -5dvh;
+                gap: 0dvh;   
+                .informacoes{
+                    margin-left: 3dvh;
+                    margin-top: 3dvh;
+                    .visita{
+                        margin-top: 0.6dvh;
+                        font-size: 1.6dvh;
+                        width: 50dvh;
+                    }
+                    .local{
+                        font-size: 1.3dvh;
+                        width: 20dvh;
+                        margin-top: 3dvh;
+                    }
+                    .tel{
+                        font-size: 1.3dvh;
+                        margin-top: 3dvh;
+                        gap: 1.4dvh;
+                    }
+                    .hora{
+                        font-size: 1.3dvh;
+                        margin-top: 2dvh;
+                        gap: 1.4dvh;
+                    }
+                    .hora2{
+                        font-size: 1.3dvh;
+                        margin-top: 2dvh;
+                        gap: 1.4dvh;
+                    }
+                }
+                .mensagem{
+                    .h2{
+                        h2{
+                        font-size: 2.4dvh;
+                        margin-left: -38dvh;
+                        }
+                    }
+                    .inputs{ 
+                        margin-left: -23dvh;
+                        
+                    .nomeEmail{
+                        margin-top: 2dvh;
+                        display: flex;
+                        flex-direction: column;
+                        gap: 0.5dvh;
+                        .in1 {
+                            padding: 1dvh 1dvh;
+                            margin-right: 1dvh;
+                            width: 22dvh;
+                            height: 3dvh;
+                            font-size: 1.4dvh;
+                        }
+                        
+                        .in2{
+                            padding: 1dvh 1dvh;
+                            margin-right: 5dvh;                      
+                            width: 22dvh;
+                            height: 3dvh;
+                            font-size: 1.4dvh;;
+                        }
+                    }
+                    .in3 {
+                        width: 22dvh; 
+                        height: 11dvh;
+                        padding: 2dvh 2dvh;
+                        margin-top: 1dvh;
+                        font-size: 1.6dvh;
+                    }
+                }
+                button{             
+                    padding: 0.3dvh 7.7dvh;
+                    margin: 0.3dvh 0dvh 4dvh -23dvh;
+                    font-size: 2dvh;
+                }
                 }
             }
         }

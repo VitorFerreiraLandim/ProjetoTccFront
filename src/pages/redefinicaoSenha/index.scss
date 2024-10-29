@@ -22,11 +22,11 @@
     .informacoes {
       background-color: #fff;
       width: 60%;
-      padding: 2rem;
+      height: 55dvh;
       border-top-left-radius: 2rem;
       border-bottom-left-radius: 2rem;
       box-shadow: 0 8px 150px rgba(0, 26, 255, 0.3);
-      height: 32.3rem;
+      
       h1 {
         font-size: 3rem;
         text-align: center;
@@ -123,7 +123,7 @@
     .bem-vinda {
       background: linear-gradient(55deg, #6f07cf 35%, #a010b3);
       width: 40%;
-      padding: 2rem;
+      height: 55dvh;
       border-top-right-radius: 2rem;
       border-bottom-right-radius: 2rem;
       box-shadow: 0 8px 150px rgba(0, 26, 255, 0.3);

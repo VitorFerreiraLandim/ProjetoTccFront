@@ -9,6 +9,7 @@ import Servico from '../../components/serviços';
 import { useState, useEffect } from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
+import exclamacao from '../../assets/images/exclamation.png';
 
 export default function Servicos() {
     const [modalAberto, setModalAberto] = useState(false);
@@ -23,6 +24,7 @@ export default function Servicos() {
     const [offsetHora, setOffsetHora] = useState(0);
     const [servicosSelecionados, setServicosSelecionados] = useState([]);
     const [horariosOcupados, setHorariosOcupados] = useState([]);
+    const [error, setError] = useState(null);
 
     const horasPorConjunto = 6;
     const navigate = useNavigate();
@@ -146,7 +148,7 @@ export default function Servicos() {
 
     const manejarClickDia = (index) => {
         setIndiceDiaSelecionado(index);
-        console.log("Dia selecionado index:", index);
+        resetarErro()
     };
     
 
@@ -255,6 +257,12 @@ export default function Servicos() {
     };
 
     const confirmarAgendamento = async () => {
+        if (indiceDiaSelecionado === null || horaSelecionada === null) {
+            setError('Por favor, selecione um dia e um horário.');
+            return; 
+        }
+        
+        setError(null); 
         await finalizarAgendamento();
         await finalizarAgendamentoAdm(); 
     };
@@ -273,6 +281,10 @@ export default function Servicos() {
         } catch (error) {
             console.error('Erro ao buscar horários ocupados:', error);
         }
+    };
+
+    const resetarErro = () => {
+        setError(null); 
     };
     
     useEffect(() => {
@@ -399,6 +411,7 @@ export default function Servicos() {
                         </div>
                         <div className='separacao'></div>
                         <div className='finalizar'>
+                        {error && <p className='error-message'><img src={exclamacao} alt="" />{error}</p>} 
                             <div className='total'>
                                 <p className='p1'>Total :</p>
                                 <p className='p2'>R$ {servicosSelecionados.reduce((total, s) => total + parseFloat(s.valor.replace(',', '.')), 0).toFixed(2)}</p>
