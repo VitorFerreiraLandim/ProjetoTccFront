@@ -124,6 +124,7 @@
                     font-weight: 700;
                     font-family: 'Libre+Franklin ', sans-serif;
                     font-size: 3.4dvh;
+                    
             }
             input {
                 border: 1px solid #8d8d8d;
@@ -132,6 +133,10 @@
                 border-radius: 10px;
                 background-color: #E6E6E6;
                 margin-left: 2.4dvh;
+                font-weight: 700;
+                font-family: 'Libre+Franklin ', sans-serif;
+                font-size: 1.7dvh;
+                padding: 0.5dvh;
             }
 
         }
@@ -212,6 +217,99 @@
             }
         }
     }
-    
+    .modal-overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.5);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        .modal-content {
+            background: rgb(240, 240, 240);
+            width: 50dvh;
+            height: 20dvh;
+            border-radius: 8px;
+            text-align: center; 
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            gap: 2dvh;
+            p{
+                font-weight: 500;
+                color: #FF0000;
+                font-size: 2vh;
+                font-family: 'Libre+Franklin', sans-serif;
+                
+            }
+            .botoes-modal{
+                gap: 1dvh;
+                button{
+                background-color: #FD4D4D;
+                height: 3dvh;
+                width: 10vh;
+                border-radius: 0.7vh;
+                font-weight: 500;
+                transition: transform 1s ease;
+                border: none;
+                color: #fff;
+                font-family: 'Libre+Franklin', sans-serif;
+                font-size: 2dvh;
+                margin-left: 1dvh;
+                &:hover {
+                    transform: scale(1.08);
+                }
+                }
+            }
+         }
+
+        }
+
+        .modal-overlay-sucesso{
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            .modal-content-sucesso{
+                background: rgb(240, 240, 240);
+                width: 50dvh;
+                height: 20dvh;
+                border-radius: 8px;
+                text-align: center; 
+                display: flex;
+                justify-content: center;
+                flex-direction: column;
+                gap: 2dvh;
+                p{
+                    font-weight: 500;
+                    color: #aaaaaa;
+                    font-size: 2.3vh;
+                    font-family: 'Libre+Franklin', sans-serif;
+                }
+                button{
+                background-color: #252525;
+                height: 5dvh;
+                width: 16vh;
+                border-radius: 0.7vh;
+                font-weight: 500;
+                transition: transform 1s ease;
+                border: none;
+                color: #fff;
+                font-family: 'Libre+Franklin', sans-serif;
+                font-size: 3dvh;
+                margin-left: 17.7dvh;
+                &:hover {
+                    transform: scale(1.08);
+                }
+                }
+            }
+        }
     
 }

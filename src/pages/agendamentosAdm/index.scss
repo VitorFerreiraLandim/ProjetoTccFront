@@ -19,17 +19,20 @@
         .topo {
             display: flex;    
             flex-direction: row;
-
+            justify-content: center; 
+            align-items: center;
+            width: 100%;
+            
             .casa {
                 height: 5dvh;
                 width: 5dvh;
-                margin-left: 3dvh;
+                margin-left: 3dvh; 
                 margin-top: 0.5dvh;
                 transition: transform 0.3s ease;
+        
                 &:hover {
                     transform: scale(1.1);
                 }
-                
             }
             
             .HM {
@@ -39,9 +42,14 @@
                 font-style: normal;
                 color: #5E1481;
                 font-size: 3.5dvh;
-                margin-left: 35.8%;
+                display: flex;    
+                justify-content: center;
+                align-items: center;
+                flex-grow: 1; 
+                margin-left: 0;
             }
         }
+        
         
         
         
@@ -65,9 +73,10 @@
                 font-style: normal;
             }
             .cards {
+                box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
                 background-color: #cfcfcf;
                 width: 65%;
-                height: 18dvh;
+                height: 14dvh;
                 border-radius: 0.8dvh;
                 margin-top: 3dvh;
                 display: flex;
@@ -110,7 +119,7 @@
                     width: 100%; 
                     height: 2px; 
                     background-color: rgba(0, 0, 0, 0.1); 
-
+                    
                 }
 
                 .botoes {
@@ -128,7 +137,7 @@
                         font-weight: 600;
                         margin-left: 3dvh ;
                         transition: transform 0.3s ease;
-                        
+                        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
                         &:hover {
                             transform: scale(1.05);
                         }
@@ -145,6 +154,7 @@
                         font-weight: 600;
                         transition: transform 0.3s ease;
                         margin-left: 1dvh;
+                        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
                         &:hover {
                             transform: scale(1.05);
                         }
@@ -158,6 +168,7 @@
             width: 2px;
             background-color: rgba(0, 0, 0, 0.1);
             height: 84dvh;
+            
         }
 
         .dir {
@@ -178,6 +189,7 @@
                 height: 17dvh;
                 border-radius: 0.8dvh;
                 margin-top: 3dvh;
+                box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
                 .info {
                     display: flex;
                     justify-content: space-between; 
@@ -257,6 +269,7 @@
                         font-weight: 600;
                         transition: transform 0.3s ease;
                         margin-left: 1dvh;
+                        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
                         &:hover {
                             transform: scale(1.05);
                         }
@@ -264,6 +277,219 @@
                 }
             }
             
+        }
+    }
+}
+
+@media (max-width: 1178px) {
+    .agendaAdm {
+        .agendamento {
+            .esq {
+                h1{
+                    font-size: 3dvh;
+                }
+                .cards {
+                    width: 65%;
+                    height: 20dvh;
+                    margin-top: 3dvh;
+                    .info { 
+                        display: flex;
+                        flex-direction: column;
+                        .nome-hora {
+                            .nome{
+                                font-size: 1.7dvh;
+                            }
+                            .hora{
+                                margin-top: 1dvh;
+                                font-size: 1.7dvh;
+                            }
+                        }
+                        .servico-valor {
+                            margin-top: 1dvh;
+                           .serv{
+                                font-size: 1.8dvh;
+                           }
+                           .valor{
+                                margin-top: 1dvh;
+                                font-size: 2dvh;
+                           }
+                        }
+                    }
+                    .divisao2 {
+                        width: 100%; 
+                        height: 2px; 
+                        background-color: rgba(0, 0, 0, 0.1);     
+                    }
+                    .botoes {
+                        margin-top: 0.8dvh;
+                        margin-bottom: 0.8dvh;
+                        .b2 {
+                            height: 3.4dvh; 
+                            width: 11.5dvh; 
+                            border-radius: 1.9dvh; 
+                            font-size: 1.7dvh;
+                            margin-left: 1dvh;
+                        }
+                    }
+                }
+                
+            }
+            .dir {
+                width: 50%;
+                flex-direction: column;
+                overflow-y: auto; 
+                 max-height: 80dvh;
+                h1{
+                    font-size: 3dvh;
+                }
+                .cards {
+                    width: 65%;
+                    height: 22dvh;
+                    margin-top: 3dvh;
+                    .info {
+                        display: flex;
+                        justify-content: space-between; 
+                        flex-direction: column;
+                        .nome-hora {
+                            .nome{
+                                font-size: 1.6dvh;
+                            }
+                            .hora{
+                                margin-top: 1dvh;
+                                font-size: 1.6dvh;
+                            }
+                            .dia{
+                                margin-top: 1dvh;
+                                font-size: 1.6dvh;
+                            }
+                        }
+    
+                        .servico-valor {
+                            margin-top: 1dvh;
+                           .serv{
+                                font-size: 1.8dvh;
+                                font-weight: 600;
+                           }
+                           .valor{
+                                margin-top: 1dvh;
+                                font-size: 2dvh;
+                           }
+                        }
+                    }
+    
+                    .divisao2 {
+                        width: 100%; 
+                        height: 2px; 
+                        background-color: rgba(0, 0, 0, 0.1); 
+                    }
+    
+                    .botoes {
+                        margin-top: 0.8dvh;
+                        margin-bottom: 0.8dvh;
+                        .b1 {
+                            height: 3.4dvh; 
+                            width: 12.5dvh; 
+                            font-size: 1.7dvh; 
+                            margin-left: 3dvh ;
+                        }
+                        .b2 {
+                            height: 3.4dvh; 
+                            width: 12.5dvh; 
+                            font-size: 1.7dvh; 
+                            margin-left: 1dvh;
+                        }
+                    }
+                }
+                
+            }
+        }
+    }
+}
+
+@media (max-width: 728px) {
+    .agendaAdm {
+        .agendamento {
+            .esq {
+                h1{
+                    font-size: 3dvh;
+                }
+                .cards {
+                    width: 65%;
+                    height: 22dvh;
+                    margin-top: 3dvh;
+                    .info { 
+                        .nome-hora {
+                            .nome{
+                                font-size: 1.5dvh;
+                            }
+                            .hora{
+                                font-size: 1.5dvh;
+                            }
+                        }
+                        .servico-valor {  
+                           .serv{
+                                font-size: 1.5dvh;
+                           }
+                           .valor{
+                                font-size: 1.8dvh;
+                           }
+                        }
+                    }
+                    .botoes {
+                        margin-top: 1.5dvh;
+                        margin-bottom: 1.5dvh;
+                        .b2 {
+                            height: 3dvh; 
+                            width: 10dvh; 
+                            font-size: 1.6dvh;
+                        }
+                    }
+                }
+                
+            }
+            .dir {
+                .cards {
+                    width: 65%;
+                    height: 22dvh;
+                    .info {
+                        .nome-hora {
+                            .nome{
+                                font-size: 1.5dvh;
+                            }
+                            .hora{
+                                margin-top: 1dvh;
+                                font-size: 1.5dvh;
+                            }
+                            .dia{
+                                margin-top: 1dvh;
+                                font-size: 1.5dvh;
+                            }
+                        }
+    
+                        .servico-valor {
+                            margin-top: 1dvh;
+                           .serv{
+                                font-size: 1.5dvh;
+                                font-weight: 600;
+                           }
+                           .valor{
+                                margin-top: 1dvh;
+                                font-size: 1.8dvh;
+                           }
+                        }
+                    }    
+                    .botoes {
+                        margin-top: 1.5dvh;
+                        margin-bottom: 1.5dvh;
+                        .b2 {
+                            height: 3dvh; 
+                            width: 10dvh; 
+                            font-size: 1.6dvh;
+                        }
+                    }
+                }
+                
+            }
         }
     }
 }

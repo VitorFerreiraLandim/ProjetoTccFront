@@ -78,8 +78,8 @@ export default function LoginPage() {
                                 onClick={() => setShowPassword(!showPassword)} 
                             />
                         </div>
-                    </div>    
-                    <Link className='senha' to='/redefinicaoSenha'>esqueceu sua senha?</Link>  
+                    </div> 
+                    <Link to='/redefinicaoSenha' className='senha1'>esqueceu sua senha?</Link>   
                     {mensagemErro && <div className='error-message'><img src={exclamacao} alt="" />{mensagemErro}</div>} 
                     <div className='botao'> 
                         <Link to='/cadastro' className='b1'>cadastrar-se</Link>

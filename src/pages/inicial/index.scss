@@ -2210,12 +2210,12 @@
             }
             .Link{
                 font-size: 2dvh;
-                margin-left:1dvh;
+                margin-left:0.1dvh;
             }
         }
         .principal{
             .img2{
-                height: 28dvh;
+                height: 25dvh;
             }
             .botao{
                 right:4.5dvh;
@@ -2240,15 +2240,15 @@
             .cards{
                     .card1{
                         height: 23dvh;
-                        width: 53dvh;
+                        width: 49dvh;
                         border-radius: 4dvh;
                         margin-bottom: 6dvh;
-                        gap: 3dvh;
+                        gap: 2dvh;
                         img{
                             width: 22dvh;
                             height: 15dvh;
                             border-radius: 3dvh;
-                            margin-left: 2dvh;
+                            margin-left: 1dvh;
                         }
                         .p{               
                             p{
@@ -2260,7 +2260,7 @@
                 }
                 .card2{
                     height: 23dvh;
-                    width: 53dvh;
+                    width: 49dvh;   
                     border-radius: 4dvh;
                     gap: 8dvh;
                     img{
@@ -2272,7 +2272,7 @@
                         p{
                             font-size: 1.3dvh;
                             width: 26dvh;
-                            margin-left: 2dvh;
+                            margin-left: 0.7dvh;
                         }
                     }
                 }
@@ -2281,7 +2281,7 @@
         .seviços{
             .servicoCard{
                 height: 43dvh;
-                width: 53dvh;
+                width: 49dvh;
                 .imgCortes{
                     display: flex;
                     flex-direction: row;
@@ -2378,11 +2378,11 @@
                     .h2{
                         h2{
                         font-size: 2.4dvh;
-                        margin-left: -38dvh;
+                        margin-left: -31dvh;
                         }
                     }
                     .inputs{ 
-                        margin-left: -23dvh;
+                        margin-left: -24.2dvh;
                         
                     .nomeEmail{
                         margin-top: 2dvh;
@@ -2415,7 +2415,7 @@
                 }
                 button{             
                     padding: 0.3dvh 7.7dvh;
-                    margin: 0.3dvh 0dvh 4dvh -23dvh;
+                    margin: 0.3dvh 0dvh 4dvh -24.3dvh;
                     font-size: 2dvh;
                 }
                 }

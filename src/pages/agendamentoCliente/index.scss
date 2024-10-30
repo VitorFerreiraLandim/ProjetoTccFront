@@ -15,18 +15,35 @@
         box-shadow: 0 8px 150px rgba(0, 0, 0, 0.3);
         justify-content: center;
         
-        .esq2{
+        .esq2 {
             width: 50%;
             display: flex;
-            align-items: center;
+            align-items: center; 
             flex-direction: column;
             overflow-y: auto;
-        .my-agenda {
-            margin: 3dvh;
-            font-family: 'Roboto', sans-serif;
-            font-weight: 600;
-        }
-
+            position: relative;
+        
+            img {
+                position: absolute; 
+                top: 0;
+                left: 0;
+                height: 5dvh;
+                width: 5dvh;
+                margin: 1dvh;
+                transition: transform 0.3s ease;
+        
+                &:hover {
+                    transform: scale(1.1);
+                }
+            }
+        
+            .my-agenda {
+                margin: 3dvh;
+                font-family: 'Roboto', sans-serif;
+                font-weight: 600;
+                text-align: center; 
+            }
+       
         .card-info {
             box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
             height: 17dvh; 
@@ -34,6 +51,8 @@
             border-radius: 1dvh; 
             display: flex;
             flex-direction: row;
+            justify-content: center; 
+            align-items: center;
             margin-top: 2.7dvh;
             padding-bottom: 1dvh;
 
@@ -76,7 +95,7 @@
                         font-family: 'Roboto', sans-serif;
                         font-weight: 600;
                         transition: transform 0.3s ease;
-                        margin-left: 1dvh;
+                        margin-left: 4dvh;
                         &:hover {
                             transform: scale(1.05);
                         }
@@ -186,6 +205,7 @@
             position: absolute; 
             top: 52.6dvh;
             z-index: 1;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
             .txt{
                 display: flex;
                 flex-direction: column;
@@ -301,7 +321,6 @@
                             .b1 {
                                 height: 3dvh; 
                                 width: 9dvh; 
-     
                                 font-size: 1.5dvh; 
                                 margin-left: 4dvh ;
                             }
@@ -310,8 +329,7 @@
                                 width: 9dvh; 
                                 border-radius: 0.9dvh; 
                                 font-size: 1.5dvh;
-                                margin-left: 1dvh;
-
+                                margin-left: 4dvh;
                             }
                         }
         
@@ -341,6 +359,34 @@
 
                 }
             }
+            .dir{
+                .card-info{
+                    padding: 1dvh;
+                    border-radius: 1dvh;
+                    position: absolute; 
+                    top: 49.6dvh;
+                    z-index: 1;
+                    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+                    .txt{
+                        gap: 0.5dvh;
+                        .p1{
+                            font-family: 'Roboto', sans-serif;
+                            font-weight: 800;
+                        }
+                        .p2{
+                            width: 14dvh;
+                            font-family: 'Roboto', sans-serif;
+                            font-weight: 500;
+                            color: #A3A3A3;
+                            font-size: 1.2dvh;
+                        }
+                    }
+                    img{
+                    display: none;
+                    }
+                }
+            }
+
         }
     }
 }   
@@ -412,6 +458,34 @@
                     }
                 }
             }
+            .dir{
+                .card-info{
+                    padding: 1dvh;
+                    border-radius: 1dvh;
+                    position: absolute; 
+                    top: 49.6dvh;
+                    z-index: 1;
+                   
+                    .txt{
+                        gap: 0.5dvh;
+                        .p1{
+                            font-family: 'Roboto', sans-serif;
+                            font-weight: 800;
+                        }
+                        .p2{
+                            width: 14dvh;
+                            font-family: 'Roboto', sans-serif;
+                            font-weight: 500;
+                            color: #A3A3A3;
+                            font-size: 1.2dvh;
+                        }
+                    }
+                    img{
+                    display: none;
+                    }
+                }
+            }
+
         }
     }
 }   

@@ -3,8 +3,8 @@ import { useEffect, useState } from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 import lene from '../../assets/images/lene.png';
-import { format, parseISO } from 'date-fns';
-import { ptBR } from 'date-fns/locale';
+import casa from '../../assets/images/casa.png';
+import { Link } from'react-router-dom';
 
 export default function AgendamentosCliente() {
     const [agendamentos, setAgendamentos] = useState([]);
@@ -135,6 +135,10 @@ export default function AgendamentosCliente() {
         <div className='div-mae'>
             <div className='agenda'>
                 <div className='esq2'> 
+                    <Link to='/inicio'>
+                        <img src={casa} alt="" />
+                    </Link>
+                    
                     <h1 className='my-agenda'>Meus Agendamentos</h1>
                     {agendamentos.slice().reverse().map((agendamento) => (
                         <div className='card-info' key={agendamento.id}>
