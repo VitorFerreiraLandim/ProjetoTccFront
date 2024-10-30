@@ -1,9 +1,20 @@
 import './index.scss';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import perfil from '../../assets/images/perfil2.webp';
 import casa from '../../assets/images/casa.png';
+import { useEffect } from 'react';
 
 export default function ConfigurarConta() {
+
+    let navigate = useNavigate();
+
+    useEffect(() => {
+        const token = localStorage.getItem('USUARIO');
+    
+        if (!token) {
+            navigate('/'); 
+        }
+    }, [navigate]);
     return (
         <div className='config'>
             <header className='header'>

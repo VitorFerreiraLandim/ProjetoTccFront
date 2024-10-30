@@ -11,6 +11,14 @@ export default function AgendamentosAdm() {
     const navigate = useNavigate();
 
     useEffect(() => {
+        const token = localStorage.getItem('USUARIO');
+    
+        if (!token) {
+            navigate('/'); 
+        }
+    }, [navigate]);
+
+    useEffect(() => {
         const fetchAgendamentos = async () => {
             try {
                 const response = await axios.get('http://localhost:5001/agendamentos_adm');

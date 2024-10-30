@@ -14,7 +14,6 @@ import { useNavigate } from 'react-router-dom';
 
 
 export default function HomePage() {
-    const [token, setToken] = useState(null);
     const [isModalOpen, setIsModalOpen] = useState(false);
 
     const navigate = useNavigate();
@@ -26,6 +25,23 @@ export default function HomePage() {
     const closeModal = () => {
         setIsModalOpen(false)
     }
+
+    const removerToken = () => {
+        localStorage.removeItem('USUARIO')
+        localStorage.removeItem('NOME_USUARIO')
+        localStorage.removeItem('USUARIO_ID')
+        localStorage.removeItem('TELEFONE_USUARIO');
+        navigate('/')
+    }
+
+    useEffect(() => {
+        const token = localStorage.getItem('USUARIO');
+    
+        if (!token) {
+            navigate('/'); 
+        }
+    }, [navigate]); 
+    
 
     useEffect(() => {
         if (isModalOpen) {
@@ -155,7 +171,7 @@ export default function HomePage() {
                    <div className='linha2'></div> 
                    <div className='links'>
                         <Link to='/ConfigConta' className='configuracao'>configurar conta</Link>
-                        <Link to='/' className='sair'>Sair</Link>
+                        <Link to='/' className='sair' onClick={removerToken}>Sair</Link>
                    </div>
                </div>
            </div>

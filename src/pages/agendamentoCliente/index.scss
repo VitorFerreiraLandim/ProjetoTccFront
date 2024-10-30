@@ -76,7 +76,7 @@
                         font-family: 'Roboto', sans-serif;
                         font-weight: 600;
                         transition: transform 0.3s ease;
-                        margin-left: 4dvh;
+                        margin-left: 1dvh;
                         &:hover {
                             transform: scale(1.05);
                         }
@@ -284,3 +284,134 @@
 
 
 }
+
+@media ( max-width: 1180px ) {
+    .div-mae { 
+        .agenda {
+            .esq2{
+                .card-info {
+                    height: 17dvh; 
+                    width: 41dvh; 
+                    margin-top: 2.7dvh;
+                    padding-bottom: 1dvh;
+                    .esq { 
+                      width: 110%;
+                        .butao {
+                            margin-top: 1.5dvh;
+                            .b1 {
+                                height: 3dvh; 
+                                width: 9dvh; 
+     
+                                font-size: 1.5dvh; 
+                                margin-left: 4dvh ;
+                            }
+                            .b2 {
+                                height: 3dvh; 
+                                width: 9dvh; 
+                                border-radius: 0.9dvh; 
+                                font-size: 1.5dvh;
+                                margin-left: 1dvh;
+
+                            }
+                        }
+        
+                        .confirma {
+                            width: 11dvh; 
+                            border-radius: 0.4dvh; 
+                            margin-left: 4dvh;
+                            margin-top: 1.8dvh;
+                            font-size: 1.6dvh; 
+                            padding: 0.2dvh; 
+                        }
+                        .finalizada{
+                            width: 11dvh; 
+                            border-radius: 0.4dvh; 
+                            margin-left: 4dvh;
+                            margin-top: 1.8dvh;
+                            font-size: 1.6dvh; 
+                            padding: 0.2dvh; 
+                        }
+        
+                        .serviço {
+                            font-size: 2dvh; 
+                            margin-left: 4dvh;
+                            margin-top: 2dvh;
+                        }
+                    }
+
+                }
+            }
+        }
+    }
+}   
+@media ( max-width: 825px ) {
+    .div-mae { 
+        .agenda {
+            .esq2{
+                .my-agenda{
+                    text-align: center;
+                    font-size: 2.9dvh;
+                }
+                .card-info {
+                    height: 17dvh; 
+                    width: 22dvh; 
+                    border-radius: 1dvh; 
+                    display: flex;
+                    flex-direction: row;
+                    margin-top: 2.7dvh;
+                    padding-bottom: 1dvh;
+        
+                     .esq {
+                       
+                        width: 100%;
+        
+                        .butao {
+                            display: flex;  
+                            margin-top: 1.5dvh;
+                            flex-direction: column;
+                            .b1 {
+                                height: 3dvh; 
+                                width: 9dvh; 
+                                border-radius: 0.9dvh; 
+                                font-size: 1.5dvh; 
+                                margin-left: 2dvh ;
+                            }
+                            .b2 {
+                                height: 3dvh; 
+                                width: 9dvh; 
+                                border-radius: 0.9dvh; 
+                                font-size: 1.5dvh;
+                                margin-left: 2dvh;
+                                margin-top: 1dvh;
+
+                            }
+                        }
+        
+                        .confirma {
+                            width: 11dvh; 
+                            border-radius: 0.4dvh; 
+                            margin-left: 2dvh;
+                            margin-top: 1.8dvh;
+                            font-size: 1.6dvh; 
+                            padding: 0.2dvh; 
+                        }
+                        .finalizada{
+                            width: 11dvh; 
+                            border-radius: 0.4dvh; 
+                            margin-left: 2dvh;
+                            margin-top: 1.8dvh;
+                            font-size: 1.6dvh; 
+                            padding: 0.2dvh; 
+                        }
+        
+                        .serviço {
+                            font-size: 1.2dvh; 
+                            margin-left: 2dvh;
+                            margin-top: 1dvh;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}   

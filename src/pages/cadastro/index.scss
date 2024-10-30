@@ -319,4 +319,37 @@
         }
     }
     
+    @media (max-width: 1024px) {
+        .div3{
+            .login{
+                .informaçoes{
+                   border-radius:4dvh ;
+                }
+                .bem-vinda{
+                    display: none;
+                }   
+            }
+        }
+    }
+    
+    @media (max-width: 728px) {
+        .div3{
+            .login{
+                .informaçoes{
+                    height: 70dvh;
+                    width: 55dvh;
+                    h1{
+                        font-size: 6dvh;
+                    }
+                    .inp{
+                        margin-top: 2dvh;
+                    }
+                }
+                .botao{
+                    margin-top: 3dvh;
+                }
+      
+            }
+        }
+    }
    

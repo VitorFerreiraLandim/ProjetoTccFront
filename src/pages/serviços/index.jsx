@@ -293,6 +293,15 @@ export default function Servicos() {
             buscarHorariosOcupados(diaSelecionado);
         }
     }, [indiceDiaSelecionado]);
+
+    useEffect(() => {
+        const token = localStorage.getItem('USUARIO');
+    
+        if (!token) {
+            navigate('/login'); 
+        }
+    }, [navigate]); 
+    
     
 
     return (

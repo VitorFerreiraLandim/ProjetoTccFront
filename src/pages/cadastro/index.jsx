@@ -8,9 +8,9 @@ import olho from '../../assets/images/olho2.png';
 import olhofechado from '../../assets/images/olho.png';
 import exclamacao from '../../assets/images/exclamation.png';
 import check from '../../assets/images/check.png';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import axios from 'axios';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 // Spinner Component
 const Spinner = () => (
@@ -32,6 +32,7 @@ export default function RegisterPage() {
     const [modalAberto, setModalAberto] = useState(false);
     const [mensagemSucesso, setMensagemSucesso] = useState('');
     const [carregando, setCarregando] = useState(false); 
+
 
     async function verificarTelefone(numero) {
         const numeroComCodigo = numero.startsWith('+') ? numero : `+55${numero.replace(/\D/g, '')}`;

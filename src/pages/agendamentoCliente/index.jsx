@@ -11,7 +11,14 @@ export default function AgendamentosCliente() {
     const [isModalOpen, setIsModalOpen] = useState(false);
     const [selectedId, setSelectedId] = useState(null);
     const navigate = useNavigate();
-   
+    
+    useEffect(() => {
+        const token = localStorage.getItem('USUARIO');
+    
+        if (!token) {
+            navigate('/'); 
+        }
+    }, [navigate]);
     
 
     useEffect(() => {
