@@ -37,6 +37,7 @@
         margin-top: 5vh;
         display: flex;
         flex-direction: column;
+        box-shadow: 0 8px 12px rgba(0, 0, 0, 0.3);
     }
 
     .foto-cliente {
@@ -70,6 +71,7 @@
                 width: 9.7vh;
                 margin-right: 8dvh;
                 border-radius: 100dvh;
+                box-shadow: 0 8px 12px rgba(0, 0, 0, 0.3);  
             }
         }
 
@@ -101,6 +103,7 @@
                     color: #FF0000;
                     border: 1px solid #FF0000;
                     font-size: 2.1dvh;
+                    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.3);
                 }
 
                 .b2 {
@@ -109,6 +112,7 @@
                     border: 1px solid #000;
                     padding: 1.1vh;
                     font-size: 2dvh;
+                    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.3);
                 }
             }
         }
@@ -129,7 +133,7 @@
             input {
                 border: 1px solid #8d8d8d;
                 height: 5vh;
-                width: 20dvh;
+                width: 28dvh;
                 border-radius: 10px;
                 background-color: #E6E6E6;
                 margin-left: 2.4dvh;
@@ -137,6 +141,7 @@
                 font-family: 'Libre+Franklin ', sans-serif;
                 font-size: 1.7dvh;
                 padding: 0.5dvh;
+                box-shadow: 0 8px 12px rgba(0, 0, 0, 0.3);
             }
 
         }
@@ -159,6 +164,7 @@
                 border: none;
                 margin-right: 3dvh;
                 font-size: 2.3dvh;
+                box-shadow: 0 8px 12px rgba(0, 0, 0, 0.3);
                 &:hover {
                     transform: scale(1.08);
                 }
@@ -205,6 +211,7 @@
                 color: #fff;
                 font-family: 'Libre+Franklin', sans-serif;
                 font-size: 3dvh;
+                box-shadow: 0 8px 12px rgba(0, 0, 0, 0.3);
                 &:hover {
                     transform: scale(1.08);
                 }
@@ -311,5 +318,350 @@
                 }
             }
         }
+}
+
+@media  (max-width: 1055px) {
+    .config{ 
+        .h1{
+            font-size: 3.1dvh;
+        }
+        .foto-cliente, .troca-nome, .box-excluir {
+            border: 1px solid #afafaf;
+            width: 67%;
+            margin-top: 4.3vh;
+        }
+
+        .foto-cliente {
+            height: 28vh;
+            .texto-foto {
+                height: 60%;
+                align-items: center;
     
+                .text {
+                    .alterar {
+                        margin: 2.7vh;
+                        font-size: 3.1dvh;
+                    }
+                    .carregar-text {
+                        margin-left: 3vh;
+                        font-size: 1.7vh;
+                    }
+                }
+    
+                .icone {
+                    height: 9.4vh;
+                    width: 9.4vh;
+                    margin-right: 8dvh;
+                }
+            }
+            .botoes {
+                height: 40%;
+                padding: 2vh;
+                .classB {
+                    gap: 2vh; 
+                    .b1, .b2 {
+                        height: 5dvh    ;
+                        width: 15vh;
+                    }
+                    .b1 {
+                        font-size: 2dvh;
+                    }
+                    .b2 {
+                        padding: 1.1vh;
+                        font-size: 1.8dvh;
+                    }
+                }
+            }
+        }
+        .troca-nome {
+            height: 28vh;
+            .exibição{
+                height: 60%;
+                h1{
+                    margin: 2vh;
+                    font-size: 3dvh;
+                }
+                input {
+                    height: 5vh;
+                    width: 26dvh;
+                    margin-left: 2.4dvh;
+                    font-size: 1.7dvh;
+                }
+    
+            }
+            .botao-salvar {
+                .salvar {
+                    height: 5dvh;
+                    width: 15vh;
+                    margin-right: 3dvh;
+                    font-size: 2.1dvh;
+                    &:hover {
+                        transform: scale(1.08);
+                    }
+                }
+            }
+        }
+        .box-excluir {
+            height: 28vh;
+            .exibição {
+                height: 60%;
+                h1 {
+                    margin: 3vh;
+                    font-size: 3dvh;
+                }
+                p {
+                    margin-left: 3vh;
+                    font-size: 1.7vh;
+                }
+            }
+        
+            .botao-excluir {
+                height: 40%;
+                align-items: center; 
+                padding: 3dvh; 
+                .excluir {
+                    background-color: #FD4D4D;
+                    height: 5dvh;
+                    width: 15vh;
+                    border-radius: 0.6vh;
+                    font-size: 3dvh;
+                }
+                p {
+                    font-size: 1.8vh;
+                }
+            }
+        }
+        
+
+    }
+}
+
+@media  (max-width: 816px) {
+    .config{ 
+        .h1{
+            font-size: 3.1dvh;
+        }
+        .foto-cliente, .troca-nome, .box-excluir {
+            border: 1px solid #afafaf;
+            width: 79%;
+            margin-top: 4.3vh;
+        }
+
+        .foto-cliente {
+            height: 24vh;
+            .texto-foto {
+                height: 60%;
+                align-items: center;
+    
+                .text {
+                    .alterar {
+                        margin: 2.5vh;
+                        font-size: 3.1dvh;
+                    }
+                    .carregar-text {
+                        margin-left: 3vh;
+                        font-size: 1.5vh;
+                    }
+                }
+    
+                .icone {
+                    height: 8vh;
+                    width: 8vh;
+                    margin-right: 3dvh;
+                }
+            }
+            .botoes {
+                height: 40%;
+                padding: 2vh;
+                .classB {
+                    gap: 2vh; 
+                    .b1, .b2 {
+                        height: 4dvh    ;
+                        width: 13vh;
+                    }
+                    .b1 {
+                        font-size: 1.7dvh;
+                    }
+                    .b2 {
+                        padding: 1vh;
+                        font-size: 1.65dvh;
+                    }
+                }
+            }
+        }
+        .troca-nome {
+            height: 24vh;
+            .exibição{
+                height: 60%;
+                h1{
+                    margin: 2vh;
+                    font-size: 2.8dvh;
+                }
+                input {
+                    height: 5vh;
+                    width: 24dvh;
+                    margin-left: 2.4dvh;
+                    font-size: 1.6dvh;
+                }
+    
+            }
+            .botao-salvar {
+                .salvar {
+                    height: 4dvh;
+                    width: 13vh;
+                    margin-right: 3dvh;
+                    font-size: 2.1dvh;
+                    &:hover {
+                        transform: scale(1.08);
+                    }
+                }
+            }
+        }
+        .box-excluir {
+            height: 24vh;
+            .exibição {
+                height: 60%;
+                h1 {
+                    margin: 3vh;
+                    font-size: 3dvh;
+                }
+                p {
+                    margin-left: 3vh;
+                    font-size: 1.58vh;
+                }
+            }
+        
+            .botao-excluir {
+                height: 40%;
+                align-items: center; 
+                padding: 3dvh; 
+                .excluir {
+                    height: 4dvh;
+                    width: 13vh;
+                    border-radius: 0.6vh;
+                    font-size: 2.2dvh;
+                }
+                p {
+                    font-size: 1.8vh;
+                }
+            }
+        }
+        
+
+    }
+}
+
+@media  (max-width: 580px) {
+    .config{ 
+        .h1{
+            font-size: 3.1dvh;
+        }
+        .foto-cliente, .troca-nome, .box-excluir {
+            border: 1px solid #afafaf;
+            width: 90%;
+            margin-top: 4.3vh;
+        }
+
+        .foto-cliente {
+            height: 24vh;
+            .texto-foto {
+                height: 60%;
+                align-items: center;
+    
+                .text {
+                    .alterar {
+                        margin: 2.2vh;
+                        font-size: 2.7dvh;
+                    }
+                    .carregar-text {
+                        margin-left: 3vh;
+                        font-size: 1.3vh;
+                    }
+                }
+    
+                .icone {
+                    height: 7vh;
+                    width: 7vh;
+                    margin-right: 3dvh;
+                }
+            }
+            .botoes {
+                height: 40%;
+                padding: 2vh;
+                .classB {
+                    gap: 2vh; 
+                    .b1, .b2 {
+                        height: 4dvh    ;
+                        width: 13vh;
+                    }
+                    .b1 {
+                        font-size: 1.7dvh;
+                    }
+                    .b2 {
+                        padding: 1vh;
+                        font-size: 1.65dvh;
+                    }
+                }
+            }
+        }
+        .troca-nome {
+            height: 24vh;
+            .exibição{
+                height: 60%;
+                h1{
+                    margin: 2vh;
+                    font-size: 2.8dvh;
+                }
+                input {
+                    height: 5vh;
+                    width: 24dvh;
+                    margin-left: 2.4dvh;
+                    font-size: 1.6dvh;
+                }
+    
+            }
+            .botao-salvar {
+                .salvar {
+                    height: 4dvh;
+                    width: 13vh;
+                    margin-right: 3dvh;
+                    font-size: 2.1dvh;
+                    &:hover {
+                        transform: scale(1.08);
+                    }
+                }
+            }
+        }
+        .box-excluir {
+            height: 24vh;
+            .exibição {
+                height: 60%;
+                h1 {
+                    margin: 3vh;
+                    font-size: 3dvh;
+                }
+                p {
+                    margin-left: 3vh;
+                    font-size: 1.58vh;
+                }
+            }
+        
+            .botao-excluir {
+                height: 40%;
+                align-items: center; 
+                padding: 3dvh; 
+                .excluir {
+                    height: 4dvh;
+                    width: 13vh;
+                    border-radius: 0.6vh;
+                    font-size: 2.2dvh;
+                }
+                p {
+                    font-size: 1.8vh;
+                }
+            }
+        }
+        
+
+    }
 }
