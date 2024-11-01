@@ -37,6 +37,7 @@ export default function LoginPage() {
             localStorage.setItem('USUARIO_ID', resp.data.id);
             localStorage.setItem('NOME_USUARIO', resp.data.nome);
             localStorage.setItem('TELEFONE_USUARIO', resp.data.telefone);
+            localStorage.setItem('IMAGEM_PERFIL', resp.data.imagem_perfil);
             navigate('/inicio')
         }
 

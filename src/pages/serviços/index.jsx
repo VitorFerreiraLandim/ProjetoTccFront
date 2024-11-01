@@ -117,7 +117,6 @@ export default function Servicos() {
                 disabled: isDisabled
             });
         }
-        console.log("Dias gerados:", dias);
         return dias;
     };
 

@@ -1,6 +1,6 @@
 import './index.scss';
 import { Link, useNavigate } from 'react-router-dom';
-import perfil from '../../assets/images/perfil2.webp';
+import perfil from '../../assets/images/perfil2.webp'; // Imagem padrão, caso o usuário não tenha uma foto
 import casa from '../../assets/images/casa.png';
 import { useEffect, useState } from 'react';
 import axios from 'axios';
@@ -9,35 +9,34 @@ export default function ConfigurarConta() {
     const [modal, setModal] = useState(false);
     const [modalSucesso, setModalSucesso] = useState(false);
     const [novoNome, setNovoNome] = useState('');
+    const [fotoPerfil, setFotoPerfil] = useState(perfil);
 
-    let navigate = useNavigate();
+    const navigate = useNavigate();
 
     useEffect(() => {
         const token = localStorage.getItem('USUARIO');
+        const imagemPerfil = localStorage.getItem('IMAGEM_PERFIL'); 
 
         if (!token) {
             navigate('/');
+        } else if (imagemPerfil) {
+            setFotoPerfil(imagemPerfil); 
         }
     }, [navigate]);
 
     const deletarUsuario = async () => {
-        let idUsuario = localStorage.getItem('USUARIO_ID');
+        const idUsuario = localStorage.getItem('USUARIO_ID');
         try {
             await axios.delete(`http://localhost:5001/usuario/${idUsuario}`);
-            await axios.delete(`http://localhost:5001/agendamento/${idUsuario}`);
-            await axios.delete(`http://localhost:5001/agendamento_adm/${idUsuario}`);
-            localStorage.removeItem('USUARIO');
-            localStorage.removeItem('NOME_USUARIO');
-            localStorage.removeItem('USUARIO_ID');
-            localStorage.removeItem('TELEFONE_USUARIO');
+            localStorage.clear();
             navigate('/');
         } catch (error) {
             console.error('Erro ao deletar usuario:', error);
-        } 
+        }
     };
 
     const renomearNome = async () => {
-        let idUsuario = localStorage.getItem('USUARIO_ID');
+        const idUsuario = localStorage.getItem('USUARIO_ID');
         try {
             await axios.put(`http://localhost:5001/usuarios/${idUsuario}`, { nome: novoNome });
             localStorage.setItem('NOME_USUARIO', novoNome); 
@@ -47,12 +46,34 @@ export default function ConfigurarConta() {
         }
     };
 
+    const handleFileChange = (e) => {
+        const file = e.target.files[0];
+        if (file) {
+            setFotoPerfil(URL.createObjectURL(file)); 
+            enviarFoto(file); 
+        }
+    };
+
+    const enviarFoto = async (file) => {
+        const idUsuario = localStorage.getItem('USUARIO_ID');
+        const formData = new FormData();
+        formData.append('fotoPerfil', file);
+    
+        try {
+            const res = await axios.post(`http://localhost:5001/usuario/${idUsuario}/upload-foto`, formData, {
+                headers: { 'Content-Type': 'multipart/form-data' }
+            });
+            setFotoPerfil(res.data.imagem); 
+        } catch (error) {
+            console.error('Erro ao carregar a foto:', error);
+        }
+    };
+    
+
     return (
         <div className='config'>
             <header className='header'>
-                <Link to='/inicio'>
-                    <img src={casa} alt="Início" />
-                </Link>
+                <Link to='/inicio'><img src={casa} alt="Início" /></Link>
             </header>
             <hr className='linha' />
             <h1 className='h1'>Configurações de Conta</h1>
@@ -63,13 +84,14 @@ export default function ConfigurarConta() {
                         <h1 className='alterar'>Alterar foto do perfil</h1>
                         <p className='carregar-text'>Carregue uma nova foto para alterar sua foto de perfil.</p>
                     </div>
-                    <img className='icone' src={perfil} alt="Perfil" />
+                    <img className='icone' src={fotoPerfil} alt="Perfil" />
                 </div>
                 <div className='botoes'>
-                    <div className='classB'>
-                        <button type="button" className='b1'>Remover foto</button>
-                        <button type="button" className='b2'>Carregar foto</button>
-                    </div>
+                    <button type="button" className='b1' onClick={() => setFotoPerfil(perfil)}>Remover foto</button>
+                    <label className='b2'>
+                        Carregar foto
+                        <input type="file" onChange={handleFileChange} style={{ display: 'none' }} />
+                    </label>
                 </div>
             </section>
 
@@ -112,13 +134,11 @@ export default function ConfigurarConta() {
             {modalSucesso && (
                 <div className="modal-overlay-sucesso">
                     <div className="modal-content-sucesso">
-                    <p>Nome de exibição alterado com sucesso!</p>
-                    <button onClick={() => setModalSucesso(false)}>fechar</button>
+                        <p>Nome de exibição alterado com sucesso!</p>
+                        <button onClick={() => setModalSucesso(false)}>Fechar</button>
                     </div>
                 </div>
             )}
-                
-            
         </div>
     );
 }
