@@ -5,7 +5,7 @@ import casa from '../../assets/images/casa.png';
 import { useEffect, useState } from 'react';
 import axios from 'axios';
 import { api } from '../service/axios';
-
+ 
 export default function ConfigurarConta() {
     const [modal, setModal] = useState(false);
     const [modalSucesso, setModalSucesso] = useState(false);
