@@ -4,6 +4,7 @@ import perfil from '../../assets/images/perfil2.webp'; // Imagem padrão, caso o
 import casa from '../../assets/images/casa.png';
 import { useEffect, useState } from 'react';
 import axios from 'axios';
+import { api } from '../service/axios';
 
 export default function ConfigurarConta() {
     const [modal, setModal] = useState(false);
@@ -27,7 +28,7 @@ export default function ConfigurarConta() {
     const deletarUsuario = async () => {
         const idUsuario = localStorage.getItem('USUARIO_ID');
         try {
-            await axios.delete(`http://localhost:5001/usuario/${idUsuario}`);
+            await api.delete(`/usuario/${idUsuario}`);
             localStorage.clear();
             navigate('/');
         } catch (error) {
@@ -38,7 +39,7 @@ export default function ConfigurarConta() {
     const renomearNome = async () => {
         const idUsuario = localStorage.getItem('USUARIO_ID');
         try {
-            await axios.put(`http://localhost:5001/usuarios/${idUsuario}`, { nome: novoNome });
+            await api.put(`/usuarios/${idUsuario}`, { nome: novoNome });
             localStorage.setItem('NOME_USUARIO', novoNome); 
             setModalSucesso(true);
         } catch (error) {
@@ -60,7 +61,7 @@ export default function ConfigurarConta() {
         formData.append('fotoPerfil', file);
     
         try {
-            const res = await axios.post(`http://localhost:5001/usuario/${idUsuario}/upload-foto`, formData, {
+            const res = await api.post(`/usuario/${idUsuario}/upload-foto`, formData, {
                 headers: { 'Content-Type': 'multipart/form-data' }
             });
             setFotoPerfil(res.data.imagem); 

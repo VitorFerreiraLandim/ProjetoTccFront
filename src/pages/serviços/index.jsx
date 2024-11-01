@@ -10,6 +10,7 @@ import { useState, useEffect } from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 import exclamacao from '../../assets/images/exclamation.png';
+import { api } from '../service/axios';
 
 export default function Servicos() {
     const [modalAberto, setModalAberto] = useState(false);
@@ -215,8 +216,8 @@ export default function Servicos() {
         };
 
         try {   
-            const url = `http://localhost:5001/agendamentos`;
-            let resp = await axios.post(url, agendamento);
+            const url = `/agendamentos`;
+            let resp = await api.post(url, agendamento);
 
             if (resp.status === 201) {
                 setModalSucessoAberto(true);
@@ -242,8 +243,8 @@ export default function Servicos() {
         };
     
         try {
-            const url = `http://localhost:5001/agendamentos_adm`;
-            let resp = await axios.post(url, agendamentoAdm);
+            const url = `/agendamentos_adm`;
+            let resp = await api.post(url, agendamentoAdm);
     
             if (resp.status === 201) {
                 setModalSucessoAberto(true);
@@ -274,7 +275,7 @@ export default function Servicos() {
 
     const buscarHorariosOcupados = async (dia) => {
         try {
-            const response = await axios.get(`http://localhost:5001/disponibilidade/${dia}`);
+            const response = await api.get(`/disponibilidade/${dia}`);
             console.log('Horários ocupados recebidos:', response.data); 
             setHorariosOcupados(response.data);
         } catch (error) {

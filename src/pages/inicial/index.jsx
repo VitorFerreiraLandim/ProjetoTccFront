@@ -67,7 +67,7 @@ export default function HomePage() {
                 <ScrollLink to='servicos' smooth={true} duration={500} className='Link'>serviços</ScrollLink>
                 <Link to='/servicos' className='Link'>agendar</Link>
                 <ScrollLink to='contato' smooth={true} duration={500} className='Link'>contato</ScrollLink>
-                <Link to={localStorage.getItem('USUARIO_ID') === '18' ?   '/AgendamentosAdm' : '/agendamentosCliente'} className='Link'>agendamentos</Link>
+                <Link to={localStorage.getItem('USUARIO_ID') === '1' ?   '/AgendamentosAdm' : '/agendamentosCliente'} className='Link'>agendamentos</Link>
                 <Link onClick={openModal}><img className='perfil' src={perfil} alt="" /></Link>
                 
             </div>

@@ -8,6 +8,7 @@ import { useState } from 'react';
 import exclamacao from '../../assets/images/exclamation.png';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
+import { api } from '../service/axios';
 
 export default function LoginPage() {
     const [showPassword, setShowPassword] = useState(false);
@@ -25,8 +26,8 @@ export default function LoginPage() {
         }
 
 
-        const url = `http://localhost:5001/entrar/`
-        let resp = await axios.post(url, usuario)
+        const url = `/entrar/`
+        let resp = await api.post(url, usuario)
 
         
         if (resp.data.erro != undefined) {

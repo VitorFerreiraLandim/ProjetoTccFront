@@ -5,6 +5,7 @@ import { useNavigate } from 'react-router-dom';
 import lene from '../../assets/images/lene.png';
 import casa from '../../assets/images/casa.png';
 import { Link } from'react-router-dom';
+import { api } from '../service/axios';
 
 export default function AgendamentosCliente() {
     const [agendamentos, setAgendamentos] = useState([]);
@@ -26,8 +27,8 @@ export default function AgendamentosCliente() {
 
         const fetchAgendamentos = async () => {
             try {
-                const url = `http://localhost:5001/agendamento?cliente_id=${clienteId}`;
-                const resp = await axios.get(url);
+                const url = `/agendamento?cliente_id=${clienteId}`;
+                const resp = await api.get(url);
                 console.log('Agendamentos recebidos:', resp.data);
                 setAgendamentos(resp.data);
             } catch (error) {
@@ -44,7 +45,7 @@ export default function AgendamentosCliente() {
 
     const handleDesmarcar = async () => {
         try {
-            const delet = await axios.delete(`http://localhost:5001/agendamento/${selectedId}`);
+            const delet = await api.delete(`/agendamento/${selectedId}`);
             setAgendamentos(agendamentos.filter(agendamento => agendamento.id !== selectedId));
             setIsModalOpen(false);
             setSelectedId(null);
@@ -57,7 +58,7 @@ export default function AgendamentosCliente() {
 
     const handleDesmarcarAdm = async () => {
         try {
-            await axios.delete(`http://localhost:5001/agendamento_adm/${selectedId}`)
+            await api.delete(`/agendamento_adm/${selectedId}`)
             setSelectedId(null);
         } catch (error) {
             console.error('Erro ao desmarcar agendamento:', error);;
@@ -122,7 +123,7 @@ export default function AgendamentosCliente() {
             navigate('/servicos');
         } else {
             try {
-                await axios.delete(`http://localhost:5001/agendamento/${id}`);
+                await axios.delete(`http://localhost:5034/agendamento/${id}`);
                 setAgendamentos(agendamentos.filter(agendamento => agendamento.id !== id));
                 navigate('/servicos');
             } catch (error) {

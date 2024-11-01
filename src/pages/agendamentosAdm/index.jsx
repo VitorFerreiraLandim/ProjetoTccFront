@@ -4,6 +4,7 @@ import axios from 'axios';
 import casa from '../../assets/images/casa.png';
 import { useNavigate } from 'react-router-dom';
 import { Link } from 'react-router-dom';
+import { api } from '../service/axios';
 
 export default function AgendamentosAdm() {
     const [agendamentos, setAgendamentos] = useState([]);
@@ -21,7 +22,7 @@ export default function AgendamentosAdm() {
     useEffect(() => {
         const fetchAgendamentos = async () => {
             try {
-                const response = await axios.get('http://localhost:5001/agendamentos_adm');
+                const response = await api.get('/agendamentos_adm');
                 console.log('Agendamentos recebidos:', response.data);
                 setAgendamentos(response.data);
             } catch (error) {
@@ -57,6 +58,13 @@ export default function AgendamentosAdm() {
         return data.toLocaleDateString('pt-BR', { day: '2-digit', month: '2-digit' });
     };
 
+
+    const WhatsApp = (telefone) => {
+        const url = `https://web.whatsapp.com/send?phone=${telefone}`;
+        window.open(url, '_blank');
+    };
+    
+
     return (
         <div className='agendaAdm'>
             <div className='agendamento'>
@@ -84,7 +92,7 @@ export default function AgendamentosAdm() {
                                 </div>
                                 <div className='divisao2'></div>
                                 <div className='botoes'>
-                                    <button className='b2'>mensagem</button>
+                                    <button className='b2' onClick={() => WhatsApp(agendamento.cliente_telefone)}>mensagem</button>
                                 </div>
                             </div>
                         ))}
@@ -107,7 +115,7 @@ export default function AgendamentosAdm() {
                                 </div>
                                 <div className='divisao2'></div>
                                 <div className='botoes'>
-                                    <button className='b2'>mensagem</button>
+                                    <button className='b2'onClick={() => WhatsApp(agendamento.cliente_telefone)}>mensagem</button>
                                 </div>
                             </div>
                         ))}

@@ -11,6 +11,7 @@ import check from '../../assets/images/check.png';
 import { useEffect, useState } from 'react';
 import axios from 'axios';
 import { Link, useNavigate } from 'react-router-dom';
+import { api } from '../service/axios';
 
 // Spinner Component
 const Spinner = () => (
@@ -96,9 +97,9 @@ export default function RegisterPage() {
             "senha": senha,
         };
 
-        const url = 'http://localhost:5001/cadastro';
+        const url = '/cadastro';
         try {
-            let resp = await axios.post(url, userData);
+            let resp = await api.post(url, userData);
             setMensagemSucesso('Cadastro concluído. Id: ' + resp.data.novoId);
             setCarregando(false);
             setModalAberto(true);

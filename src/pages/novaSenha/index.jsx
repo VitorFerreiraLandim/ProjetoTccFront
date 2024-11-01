@@ -6,6 +6,7 @@ import check from '../../assets/images/check.png';
 import { useState } from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
+import { api } from '../service/axios';
 
 export default function RedefinicaoNovaSenha() {
     const [showPassword, setShowPassword] = useState(false);
@@ -26,7 +27,7 @@ export default function RedefinicaoNovaSenha() {
 
         try {
             const email = localStorage.getItem('emailRedefinicao'); 
-            const response = await axios.post('http://localhost:5001/redefinir-senha', { novaSenha, email });
+            const response = await api.post('/redefinir-senha', { novaSenha, email });
 
             if (response.data.success) {
                 setModalAberto(true) 

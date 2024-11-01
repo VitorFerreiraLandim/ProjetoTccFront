@@ -3,6 +3,7 @@ import './index.scss';
 import { Link , useNavigate} from 'react-router-dom';
 import emailIcon from '../../assets/images/email.webp';
 import axios from 'axios';
+import { api } from '../service/axios';
 
 const Spinner = () => (
     <div className="spinner-overlay">
@@ -30,8 +31,8 @@ export default function RedefinicaoSenha() {
         setCarregando(true);
 
         try {
-            const url = 'http://localhost:5001/verificar-email2';
-            const response = await axios.post(url, { email: emailInput });
+            const url = '/verificar-email2';
+            const response = await api.post(url, { email: emailInput });
 
             if (response.data.existe) {
                 setCarregando(false);
