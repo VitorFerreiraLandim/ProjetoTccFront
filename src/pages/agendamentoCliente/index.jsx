@@ -4,6 +4,7 @@ import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 import lene from '../../assets/images/lene.png';
 import casa from '../../assets/images/casa.png';
+import agenda from '../../assets/images/5709577.png';
 import { Link } from'react-router-dom';
 import { api } from '../service/axios';
 
@@ -137,11 +138,18 @@ export default function AgendamentosCliente() {
             <div className='agenda'>
                 <div className='esq2'> 
                     <Link to='/inicio'>
-                        <img src={casa} alt="" />
+                        <img className='casa' src={casa} alt="" />
                     </Link>
                     
                     <h1 className='my-agenda'>Meus Agendamentos</h1>
-                    {agendamentos.slice().reverse().map((agendamento) => (
+                    {agendamentos.length === 0 ? (
+                    <div className='sem-agendamentos'>
+                        <img className='sem-agenda' src={agenda} alt="" />
+                        <p>Você não tem agendamentos no momento.</p>
+                        <Link className='agendar' to="/servicos">Agendar</Link>
+                    </div>
+                ) : (
+                    agendamentos.slice().reverse().map((agendamento) => (
                         <div className='card-info' key={agendamento.id}>
                             <div className='esq'>
                                 <p className={isAgendamentoFinalizado(agendamento) ? 'finalizada' : 'confirma'}>
@@ -165,12 +173,13 @@ export default function AgendamentosCliente() {
                                 </div>
                             </div>
                         </div>
-                    ))}
+                    ))
+                )}
                 </div>
                 <div className='divisao'></div>
                 <div className='dir'>
                     <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d10334.777086337894!2d-46.709191277947156!3d-23.679695505774813!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce502d3b230a8d%3A0x89668535360273da!2sLene%20Cabeleireiros!5e0!3m2!1spt-BR!2sbr!4v1729645944119!5m2!1spt-BR!2sbr"
-                        width="79%" 
+                        width="86%" 
                         height="310" 
                         style={{border: '0', borderRadius: '2dvh'}}
                         allowFullScreen 

@@ -58,7 +58,7 @@
             display: flex;
             width: 100%;
             justify-content: center;
-        }
+        
 
         .esq {
             width: 50%;
@@ -279,11 +279,13 @@
             
         }
     }
+    }
 }
 
 @media (max-width: 1178px) {
     .agendaAdm {
         .agendamento {
+            .content{
             .esq {
                 h1{
                     font-size: 3dvh;
@@ -403,21 +405,33 @@
                 
             }
         }
+        }
     }
 }
 
 @media (max-width: 728px) {
     .agendaAdm {
         .agendamento {
+            
+            .content{
+                
+                display: flex;
+                flex-direction: column;
+                height: 80%;
             .esq {
+                height: 50%;
+                width: 100%;
+                overflow-x: auto; 
                 h1{
                     font-size: 3dvh;
                 }
                 .cards {
-                    width: 65%;
-                    height: 23dvh;
+                    width: 85%;
+                    height: 15dvh;
                     margin-top: 3dvh;
                     .info { 
+                        display: flex;
+                        flex-direction: row;
                         .nome-hora {
                             .nome{
                                 font-size: 1.5dvh;
@@ -427,6 +441,7 @@
                             }
                         }
                         .servico-valor {  
+                            margin-top: -0dvh;
                            .serv{
                                 font-size: 1.5dvh;
                            }
@@ -447,11 +462,23 @@
                 }
                 
             }
+            .divisao {
+                width: 84dvh;
+                background-color: rgba(0, 0, 0, 0.1);
+                height: 1px;
+                
+            }
+            
             .dir {
+                height: 50%;
+                width: 100%;
+                overflow-x: auto; 
                 .cards {
-                    width: 65%;
+                    width: 85%;
                     height: 24dvh;
                     .info {
+                        display: flex;
+                        flex-direction: row;
                         .nome-hora {
                             .nome{
                                 font-size: 1.5dvh;
@@ -490,6 +517,7 @@
                 }
                 
             }
+        }
         }
     }
 }

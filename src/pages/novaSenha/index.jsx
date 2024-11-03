@@ -7,9 +7,11 @@ import { useState } from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 import { api } from '../service/axios';
+import exclamacao from '../../assets/images/exclamation.png';
 
 export default function RedefinicaoNovaSenha() {
     const [showPassword, setShowPassword] = useState(false);
+    const [showPassword2, setShowPassword2] = useState(false);
     const [novaSenha, setNovaSenha] = useState('');
     const [confirmarSenha, setConfirmarSenha] = useState('');
     const [errorMessage, setErrorMessage] = useState('');
@@ -47,8 +49,6 @@ export default function RedefinicaoNovaSenha() {
             <div className='login'>
                 <div className='informaçoes'>
                     <h1>Redefina sua senha</h1>
-                    {errorMessage && <p className='error'>{errorMessage}</p>}
-                    {successMessage && <p className='success'>{successMessage}</p>}
                     <form onSubmit={handleSubmit}>
                         <div className='inp'>
                             <div className='in1'>
@@ -69,19 +69,20 @@ export default function RedefinicaoNovaSenha() {
                             <div className='in2'>
                                 <img className='img1' src={img2} alt="" />
                                 <input 
-                                    type={showPassword ? 'text' : 'password'} 
+                                    type={showPassword2 ? 'text' : 'password'} 
                                     placeholder='Confirmar a nova senha' 
                                     value={confirmarSenha}
                                     onChange={(e) => setConfirmarSenha(e.target.value)}
                                 />
                                 <img 
                                     className='password' 
-                                    src={showPassword ? olho : olhofechado} 
+                                    src={showPassword2 ? olho : olhofechado} 
                                     alt="" 
-                                    onClick={() => setShowPassword(!showPassword)} 
+                                    onClick={() => setShowPassword2(!showPassword2)} 
                                 />
                             </div>
                         </div>   
+                        {errorMessage && <p className='error'><img src={exclamacao} alt="" />{errorMessage}</p>}
                         <div className='botao'> 
                             <button className='b2'>Redefinir</button>
                         </div>

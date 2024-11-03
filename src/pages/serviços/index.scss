@@ -158,7 +158,7 @@ body {
                     border: #cfcfcf solid 1px;
                     cursor: pointer; 
                     transition: background-color 0.3s; 
-                    
+                    box-shadow: 0 8px 10px rgba(0, 0, 0, 0.3);
                     &:hover {
                         background-color: #f0f0f0; 
                     }
@@ -203,6 +203,7 @@ body {
                     padding-left: 1dvh;
                     padding-right: 1dvh;
                     border-radius: 1dvh;
+                    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.3);
                     .dia,.tarde,.noite{
                         
                         height: 4dvh;
@@ -220,6 +221,7 @@ body {
                         background-color: #fff; 
                         color: #7C57B8;
                         opacity: 100%;
+                        box-shadow: 0 8px 10px rgba(0, 0, 0, 0.3);
                     }
                 }
                 .horas{
@@ -254,8 +256,11 @@ body {
                                 font-family: "Hind Siliguri", sans-serif;
                                 font-weight: 500;
                                 cursor: pointer;
-                              
+                                box-shadow: 0 8px 10px rgba(0, 0, 0, 0.3);
                                 transition: background-color 0.3s, color 0.3s;
+                            }
+                            .tem:hover {
+                                background-color: #f0f0f0; 
                             }
                             .sem-horarios{
                                 font-family: "Hind Siliguri", sans-serif;
@@ -285,7 +290,7 @@ body {
                 max-height: 200px; 
                 overflow-y: auto; 
                 margin-bottom: 10px; 
-         
+                box-shadow: 0 8px 10px rgba(0, 0, 0, 0.3);
                 .detalhes {
                     display: flex; 
                     flex-direction: row;
@@ -417,6 +422,7 @@ body {
                     transition: transform 1s ease;
                     margin-top: 2.4dvh;
                     margin-bottom: 6dvh;
+                    box-shadow: 0 8px 10px rgba(0, 0, 0, 0.3);
                 }       
                 button:hover {
                     transform: scale(1.05);
@@ -594,6 +600,41 @@ body {
 
 @media (max-width: 1200px){
     .divmae{
+        .ser {
+            display: flex;
+   
+            .imgsev {
+                position: relative; 
+                width: 100%;
+                h1 {
+                    position: absolute; 
+                    top: 38%; 
+                    left: 50%; 
+                    transform: translate(-50%, -50%);
+                    font-size: 10dvh;
+                }
+            }
+        
+            .sevicos {
+                width: 62%;
+                top: -3dvh; 
+                .voltar {
+                    display: flex;
+                    gap: 0.01dvh;
+                    margin-top: 0; 
+                    margin-left: 0;
+                    img {
+                        width: 5dvh;
+                        height: 5dvh;
+                        margin: 1dvh;
+                    }
+                    h1 {
+                        font-size: 3dvh;
+                        margin-bottom: 0;
+                    }
+                }
+            }
+        }
         .modal-overlay{
             .modal-content{
                 width: 60%;
@@ -629,6 +670,7 @@ body {
 
 @media (max-width: 1024px){
     .divmae{
+        
         .modal-overlay{
             .modal-content{
                 width: 80%;
@@ -649,6 +691,40 @@ body {
 
  @media (max-width: 768px) {
     .divmae{
+        .ser {
+            display: flex;
+   
+            .imgsev {
+                position: relative; 
+                width: 100%;
+                h1 {
+                    position: absolute; 
+                    top: 38%; 
+                    left: 50%; 
+                    transform: translate(-50%, -50%);
+                    font-size: 8dvh;
+                }
+            }
+        
+            .sevicos {
+                width: 62%;
+                top: -1dvh; 
+                .voltar {
+                    display: flex;
+                    gap: 0.01dvh;
+                    margin-top: 0; 
+                    margin-left: 0;
+                    img {
+                        width: 5dvh;
+                        height: 5dvh;
+                        margin: 1dvh;
+                    }
+                    h1 {
+                        font-size: 3dvh;
+                        margin-bottom: 0;
+                    }
+                }
+            }}
         .modal-overlay{
             .modal-content{
                 width: 90%;
