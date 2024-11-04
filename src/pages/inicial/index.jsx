@@ -11,6 +11,7 @@ import { Link } from 'react-router-dom'
 import { useState, useEffect } from 'react';
 import { Link as ScrollLink } from 'react-scroll'
 import { useNavigate } from 'react-router-dom';
+import InputMask from 'react-input-mask';
 
 
 export default function HomePage() {
@@ -59,6 +60,23 @@ export default function HomePage() {
     const verMais = () => {
         navigate('/servicos')
     }
+
+    const [mensagem, setMensagem]= useState('');
+    const [telefone, setTelefone]= useState('')
+
+    const WhatsApp = () => {
+        // Defina o número e a mensagem aqui
+        const phoneNumber = '5511980152875'; // Substitua pelo número do WhatsApp com o código do país
+        
+        
+        // URL para abrir no WhatsApp App
+        const url = `https://web.whatsapp.com/send?phone=${telefone}&text=${encodeURIComponent(mensagem)}`;
+    
+        // Abre o WhatsApp App, se disponível
+        window.open(url, '_blank');
+      };
+
+
     return (
         <div className='div'>
             <div className='header'>
@@ -143,12 +161,23 @@ export default function HomePage() {
                         <div className='inputs'>
                             <div className='nomeEmail'>
                                 <input className='in1' type="text" placeholder='nome' />
-                                <input className='in2' type="text" placeholder='email' />
+                                <InputMask
+                                className='in2' 
+                                mask="(99) 99999-9999" 
+                                placeholder='Telefone' 
+                                value={telefone}
+                                onChange={e => setTelefone(e.target.value)}
+                                
+                            >
+                                {(inputProps) => <input {...inputProps} />} 
+                            </InputMask>
+                            
                             </div>
-                            <textarea className="in3" placeholder="Digite sua mensagem aqui..."></textarea>
+                            <textarea className="in3" placeholder="Digite sua mensagem aqui..."
+                             value={mensagem} onChange={e =>setMensagem(e.target.value)}></textarea>
 
                         </div>
-                        <button>enviar</button>
+                        <button onClick={WhatsApp}>enviar</button>
                     </div>
                 </div>
             </div>
