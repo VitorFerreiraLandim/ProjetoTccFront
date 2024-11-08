@@ -202,7 +202,7 @@ export default function RegisterPage() {
                     </div>    
                     <div className='botao'> 
                         <button className='b1' onClick={cadastrar}>cadastrar</button>
-                        <Link to='/' className='b2'>voltar</Link> 
+                        <Link to='/login' className='b2'>voltar</Link> 
                     </div>
                 </div>
                 <div className='bem-vinda'>

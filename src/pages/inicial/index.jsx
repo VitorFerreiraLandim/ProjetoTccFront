@@ -35,13 +35,7 @@ export default function HomePage() {
         navigate('/')
     }
 
-    useEffect(() => {
-        const token = localStorage.getItem('USUARIO');
     
-        if (!token) {
-            navigate('/'); 
-        }
-    }, [navigate]); 
     
 
     useEffect(() => {
@@ -60,6 +54,7 @@ export default function HomePage() {
     const verMais = () => {
         navigate('/servicos')
     }
+
 
     const [mensagem, setMensagem]= useState('');
     const [telefone, setTelefone]= useState('')
@@ -200,7 +195,8 @@ export default function HomePage() {
                    <div className='linha2'></div> 
                    <div className='links'>
                         <Link to='/ConfigConta' className='configuracao'>configurar conta</Link>
-                        <Link to='/' className='sair' onClick={removerToken}>Sair</Link>
+                        <Link to='/login' className='sair'>Iniciar seção</Link>
+                        <Link to='/' className='sair' onClick={removerToken}>Sair da seção</Link>
                    </div>
                </div>
            </div>
@@ -208,4 +204,4 @@ export default function HomePage() {
             )}
         </div>
     );
-}
+}   

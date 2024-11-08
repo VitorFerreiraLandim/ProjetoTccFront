@@ -18,7 +18,7 @@ export default function AgendamentosCliente() {
         const token = localStorage.getItem('USUARIO');
     
         if (!token) {
-            navigate('/'); 
+            navigate('/login'); 
         }
     }, [navigate]);
     

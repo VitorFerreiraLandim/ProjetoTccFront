@@ -63,13 +63,21 @@ export default function AgendamentosAdm() {
         const url = `https://web.whatsapp.com/send?phone=${telefone}`;
         window.open(url, '_blank');
     };
+
+    useEffect(() => {
+        const token = localStorage.getItem('USUARIO');
     
+        if (!token) {
+            navigate('/login'); 
+        }
+    }, [navigate]);
+     
 
     return (
         <div className='agendaAdm'>
             <div className='agendamento'>
                 <div className='topo'>
-                <Link to='/inicio'>
+                <Link to='/'>
                     <img  className='casa' src={casa} alt="" />
                 </Link>
                 

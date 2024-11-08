@@ -313,7 +313,7 @@ export default function Servicos() {
                 </div>
                 <div className='sevicos'>
                     <div className='voltar'>
-                        <Link to='/inicio'>
+                        <Link to='/'>
                             <img src={seta2} alt="" />
                         </Link>
                         <h1>voltar</h1>

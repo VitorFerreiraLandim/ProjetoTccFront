@@ -9,7 +9,7 @@ import exclamacao from '../../assets/images/exclamation.png';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 import { api } from '../service/axios';
-
+import casa from '../../assets/images/casa.png';
 export default function LoginPage() {
     const [showPassword, setShowPassword] = useState(false);
     const [email, setEmail] = useState('')
@@ -39,7 +39,7 @@ export default function LoginPage() {
             localStorage.setItem('NOME_USUARIO', resp.data.nome);
             localStorage.setItem('TELEFONE_USUARIO', resp.data.telefone);
             localStorage.setItem('IMAGEM_PERFIL', resp.data.imagem_perfil);
-            navigate('/inicio')
+            navigate('/')
         }
 
         
@@ -50,9 +50,14 @@ export default function LoginPage() {
 
     return (
         <div className='div2'>
+            
             <div className='login'>
                 <div className='informaçoes'>
-                    <h1>Login</h1>
+                    <div className='top'>
+                        <Link to='/' ><img className='casa' src={casa} alt="Início" /></Link>
+                        <h1>Login</h1>
+                    </div>
+                    
                     <div className='inp'>
                         <div className='in1'>
                             <img className='img1' src={perfil} alt="" />

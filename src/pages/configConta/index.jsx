@@ -1,11 +1,10 @@
 import './index.scss';
 import { Link, useNavigate } from 'react-router-dom';
-import perfil from '../../assets/images/perfil2.webp'; // Imagem padrão, caso o usuário não tenha uma foto
+import perfil from '../../assets/images/perfil2.webp'; 
 import casa from '../../assets/images/casa.png';
 import { useEffect, useState } from 'react';
-import axios from 'axios';
 import { api } from '../service/axios';
- 
+
 export default function ConfigurarConta() {
     const [modal, setModal] = useState(false);
     const [modalSucesso, setModalSucesso] = useState(false);
@@ -16,10 +15,10 @@ export default function ConfigurarConta() {
 
     useEffect(() => {
         const token = localStorage.getItem('USUARIO');
-        const imagemPerfil = localStorage.getItem('IMAGEM_PERFIL'); 
+        const imagemPerfil = localStorage.getItem('IMAGEM_PERFIL');
 
         if (!token) {
-            navigate('/');
+            navigate('/login');
         } else if (imagemPerfil) {
             setFotoPerfil(imagemPerfil); 
         }
@@ -58,13 +57,22 @@ export default function ConfigurarConta() {
     const enviarFoto = async (file) => {
         const idUsuario = localStorage.getItem('USUARIO_ID');
         const formData = new FormData();
-        formData.append('fotoPerfil', file);
+        formData.append('fotoPerfil', file); 
     
         try {
-            const res = await api.post(`/usuario/${idUsuario}/upload-foto`, formData, {
+            const res = await api.post(`/usuario/${idUsuario}/upload-imagem`, formData, {
                 headers: { 'Content-Type': 'multipart/form-data' }
             });
-            setFotoPerfil(res.data.imagem); 
+    
+            console.log('Resposta do servidor:', res.data); 
+    
+            if (res.data && res.data.imagem) {
+                const caminhoImagem = res.data.imagem;
+                setFotoPerfil(caminhoImagem); 
+                localStorage.setItem('IMAGEM_PERFIL', caminhoImagem); 
+            } else {
+                console.error('Resposta do servidor não contém a imagem.');
+            }
         } catch (error) {
             console.error('Erro ao carregar a foto:', error);
         }
@@ -74,7 +82,7 @@ export default function ConfigurarConta() {
     return (
         <div className='config'>
             <header className='header'>
-                <Link to='/inicio'><img src={casa} alt="Início" /></Link>
+                <Link to='/'><img src={casa} alt="Início" /></Link>
             </header>
             <hr className='linha' />
             <h1 className='h1'>Configurações de Conta</h1>

@@ -41,7 +41,7 @@ export default function RedefinicaoNovaSenha() {
     };
 
     const voltarLogin = () => {
-        navigate('/')
+        navigate('/login')
     };
 
     return (
