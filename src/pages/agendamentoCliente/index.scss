@@ -88,13 +88,13 @@
        
         .card-info {
             box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
-            height: 17dvh; 
-            width: 57dvh; 
-            border-radius: 1dvh; 
+            height: 20dvh; 
+            width: 57dvh;
+            border-radius: 1dvh;
             display: flex;
-            flex-direction: row;
-            justify-content: center; 
-            align-items: center;
+            flex-direction: row; 
+            justify-content: space-between; 
+            overflow-y: auto;   
             margin-top: 2.7dvh;
             padding-bottom: 1dvh;
 
@@ -105,8 +105,7 @@
 
                 .butao {
                     display: flex;
-                    
-                    margin-top: 1dvh;
+                    margin-top: 3dvh;
                     
                     .b1 {
                         height: 3dvh; 
@@ -153,7 +152,7 @@
                     color: #eceaea;
                     border-radius: 0.4dvh; 
                     margin-left: 4dvh;
-                    margin-top: 1.8dvh;
+                    margin-top: 2dvh;
                     font-size: 1.6dvh; 
                     padding: 0.3dvh; 
                 }
@@ -166,7 +165,7 @@
                     color: #eceaea;
                     border-radius: 0.4dvh; 
                     margin-left: 4dvh;
-                    margin-top: 1.8dvh;
+                    margin-top: 2dvh;
                     font-size: 1.6dvh; 
                     padding: 0.3dvh; 
                 }
@@ -174,9 +173,9 @@
                 .serviço {
                     font-family: 'Roboto', sans-serif;
                     font-weight: 500;
-                    font-size: 2.5dvh; 
+                    font-size: 2.2dvh; 
                     margin-left: 4dvh;
-                    margin-top: 2dvh;
+                    margin-top: 3dvh;
                 }
             }
 

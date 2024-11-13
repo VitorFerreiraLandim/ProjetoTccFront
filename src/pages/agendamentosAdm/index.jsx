@@ -5,6 +5,7 @@ import casa from '../../assets/images/casa.png';
 import { useNavigate } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 import { api } from '../service/axios';
+import agenda from '../../assets/images/5709577.png';
 
 export default function AgendamentosAdm() {
     const [agendamentos, setAgendamentos] = useState([]);
@@ -86,29 +87,42 @@ export default function AgendamentosAdm() {
                 <div className='content'>
                     <div className='esq'>
                         <h1>HOJE</h1>
-                        {agendamentosHoje.map((agendamento, index) => (
-                            <div className='cards' key={index}>
-                                <div className='info'>
-                                    <div className='nome-hora'>
-                                        <p className='nome'>Nome: {agendamento.cliente_nome}</p>
-                                        <p className='hora'>Horario: {agendamento.hora}</p>
+                        {agendamentosHoje.length === 0 ? (
+                            <div className='sem-agendamentos'>
+                            <img className='sem-agenda' src={agenda} alt="" />
+                            <p>Sem agendamentos hoje.</p>
+                        </div>
+                        ) : (
+                            agendamentosHoje.map((agendamento, index) => (
+                                <div className='cards' key={index}>
+                                    <div className='info'>
+                                        <div className='nome-hora'>
+                                            <p className='nome'>Nome: {agendamento.cliente_nome}</p>
+                                            <p className='hora'>Horário: {agendamento.hora}</p>
+                                        </div>
+                                        <div className='servico-valor'>
+                                            <p className='serv'>{agendamento.trabalho}</p>
+                                            <p className='valor'>R$ {agendamento.valor}</p>
+                                        </div>
                                     </div>
-                                    <div className='servico-valor'>
-                                        <p className='serv'>{agendamento.trabalho}</p>
-                                        <p className='valor'>R$ {agendamento.valor}</p>
+                                    <div className='divisao2'></div>
+                                    <div className='botoes'>
+                                        <button className='b2' onClick={() => WhatsApp(agendamento.cliente_telefone)}>Mensagem</button>
                                     </div>
                                 </div>
-                                <div className='divisao2'></div>
-                                <div className='botoes'>
-                                    <button className='b2' onClick={() => WhatsApp(agendamento.cliente_telefone)}>mensagem</button>
-                                </div>
-                            </div>
-                        ))}
+                            ))
+                        )}
                     </div>
                     <div className='divisao'></div>
                     <div className='dir'>
                         <h1>PROXIMOS DIAS</h1>
-                        {proximosAgendamentos.map((agendamento, index) => (
+                        {proximosAgendamentos.length === 0? (
+                            <div className='sem-agendamentos'>
+                                <img className='sem-agenda' src={agenda} alt="" />
+                            <p>Sem agendamentos próximos.</p>
+                        </div>
+                        ) : (
+                        proximosAgendamentos.map((agendamento, index) => (
                             <div className='cards' key={index}>
                                 <div className='info'>
                                     <div className='nome-hora'>
@@ -126,7 +140,7 @@ export default function AgendamentosAdm() {
                                     <button className='b2'onClick={() => WhatsApp(agendamento.cliente_telefone)}>mensagem</button>
                                 </div>
                             </div>
-                        ))}
+                        )))}
                     </div>
                 </div>
             </div>

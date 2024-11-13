@@ -72,6 +72,26 @@
                 font-weight: 600;
                 font-style: normal;
             }
+            .sem-agendamentos{
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                flex-direction: column;
+                margin-top: 21dvh;
+                .sem-agenda{
+                    height: 12dvh;
+                    width: 12dvh;
+                }
+                p{
+                    font-family: 'Roboto', sans-serif;
+                    font-weight: 600;
+                    text-align: center;
+                    color: #8A37BB;
+                    font-size: 2dvh;
+                    width: 30dvh;
+                    margin-top: 2dvh;
+                }
+            }
             .cards {
                 box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
                 background-color: #cfcfcf;
@@ -186,7 +206,7 @@
             .cards {
                 background-color: #cfcfcf;
                 width: 65%;
-                height: 17dvh;
+                height: 18dvh;
                 border-radius: 0.8dvh;
                 margin-top: 3dvh;
                 box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
@@ -425,6 +445,9 @@
                 h1{
                     font-size: 3dvh;
                 }
+                .sem-agendamentos{
+                    margin-top: 5dvh;
+                }
                 .cards {
                     width: 85%;
                     height: 15dvh;
@@ -444,6 +467,7 @@
                             margin-top: -0dvh;
                            .serv{
                                 font-size: 1.5dvh;
+                                
                            }
                            .valor{
                                 font-size: 1.8dvh;
@@ -475,7 +499,7 @@
                 overflow-x: auto; 
                 .cards {
                     width: 85%;
-                    height: 24dvh;
+                    height: 19dvh;
                     .info {
                         display: flex;
                         flex-direction: row;
@@ -494,10 +518,11 @@
                         }
     
                         .servico-valor {
-                            margin-top: 1dvh;
+                            margin-top: 0.1dvh;
                            .serv{
                                 font-size: 1.5dvh;
                                 font-weight: 600;
+                                width: 20dvh;
                            }
                            .valor{
                                 margin-top: 1dvh;

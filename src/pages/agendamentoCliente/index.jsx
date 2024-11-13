@@ -44,7 +44,7 @@ export default function AgendamentosCliente() {
         setIsModalOpen(true);
     };
 
-    const handleDesmarcar = async () => {
+    const Desmarcar = async () => {
         try {
             const delet = await api.delete(`/agendamento/${selectedId}`);
             setAgendamentos(agendamentos.filter(agendamento => agendamento.id !== selectedId));
@@ -57,7 +57,7 @@ export default function AgendamentosCliente() {
         }
     };
 
-    const handleDesmarcarAdm = async () => {
+    const DesmarcarAdm = async () => {
         try {
             await api.delete(`/agendamento_adm/${selectedId}`)
             setSelectedId(null);
@@ -86,8 +86,8 @@ export default function AgendamentosCliente() {
     
     
     const handleMultipleClicks = (id) => {
-       handleDesmarcar(id); 
-       handleDesmarcarAdm(id);
+       Desmarcar(id); 
+       DesmarcarAdm(id);
 
     };
     
@@ -113,9 +113,6 @@ export default function AgendamentosCliente() {
         const currentDate = new Date();
         return agendamentoDate < currentDate;
     };
-    
-    
-    
 
     const Remarcar = async (id) => {
         const agendamento = agendamentos.find(a => a.id === id);
@@ -124,7 +121,7 @@ export default function AgendamentosCliente() {
             navigate('/servicos');
         } else {
             try {
-                await axios.delete(`http://localhost:5034/agendamento/${id}`);
+                await api.delete(`/agendamento/${id}`);
                 setAgendamentos(agendamentos.filter(agendamento => agendamento.id !== id));
                 navigate('/servicos');
             } catch (error) {
@@ -137,7 +134,7 @@ export default function AgendamentosCliente() {
         <div className='div-mae'>
             <div className='agenda'>
                 <div className='esq2'> 
-                    <Link to='/inicio'>
+                    <Link to='/'>
                         <img className='casa' src={casa} alt="" />
                     </Link>
                     
