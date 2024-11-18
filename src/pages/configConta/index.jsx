@@ -1,6 +1,6 @@
 import './index.scss';
 import { Link, useNavigate } from 'react-router-dom';
-import perfil from '../../assets/images/perfil2.webp'; 
+import perfilPadrao from '../../assets/images/perfil2.webp'; 
 import casa from '../../assets/images/casa.png';
 import { useEffect, useState } from 'react';
 import { api } from '../service/axios';
@@ -9,18 +9,15 @@ export default function ConfigurarConta() {
     const [modal, setModal] = useState(false);
     const [modalSucesso, setModalSucesso] = useState(false);
     const [novoNome, setNovoNome] = useState('');
-    const [fotoPerfil, setFotoPerfil] = useState(perfil);
+    const [fotoPerfil, setFotoPerfil] = useState(perfilPadrao); 
 
     const navigate = useNavigate();
 
     useEffect(() => {
-        const token = localStorage.getItem('USUARIO');
-        const imagemPerfil = localStorage.getItem('IMAGEM_PERFIL');
-
-        if (!token) {
+        const idUsuario = localStorage.getItem('USUARIO_ID');
+        if (!idUsuario) {
             navigate('/login');
-        } else if (imagemPerfil) {
-            setFotoPerfil(imagemPerfil); 
+            return;
         }
     }, [navigate]);
 
@@ -31,7 +28,7 @@ export default function ConfigurarConta() {
             localStorage.clear();
             navigate('/');
         } catch (error) {
-            console.error('Erro ao deletar usuario:', error);
+            console.error('Erro ao deletar usuário:', error);
         }
     };
 
@@ -49,36 +46,15 @@ export default function ConfigurarConta() {
     const handleFileChange = (e) => {
         const file = e.target.files[0];
         if (file) {
-            setFotoPerfil(URL.createObjectURL(file)); 
-            enviarFoto(file); 
+            setFotoPerfil(URL.createObjectURL(file))
         }
-    };
-
-    const enviarFoto = async (file) => {
-        const idUsuario = localStorage.getItem('USUARIO_ID');
-        const formData = new FormData();
-        formData.append('fotoPerfil', file); 
-    
-        try {
-            const res = await api.post(`/usuario/${idUsuario}/upload-imagem`, formData, {
-                headers: { 'Content-Type': 'multipart/form-data' }
-            });
-    
-            console.log('Resposta do servidor:', res.data); 
-    
-            if (res.data && res.data.imagem) {
-                const caminhoImagem = res.data.imagem;
-                setFotoPerfil(caminhoImagem); 
-                localStorage.setItem('IMAGEM_PERFIL', caminhoImagem); 
-            } else {
-                console.error('Resposta do servidor não contém a imagem.');
-            }
-        } catch (error) {
-            console.error('Erro ao carregar a foto:', error);
-        }
+        e.target.value = null;
     };
     
-
+    const removerFoto = () => {
+        setFotoPerfil(perfilPadrao); 
+    };
+    
     return (
         <div className='config'>
             <header className='header'>
@@ -96,12 +72,13 @@ export default function ConfigurarConta() {
                     <img className='icone' src={fotoPerfil} alt="Perfil" />
                 </div>
                 <div className='botoes'>
-                    <button type="button" className='b1' onClick={() => setFotoPerfil(perfil)}>Remover foto</button>
+                    <button type="button" className='b1' onClick={removerFoto}>Remover foto</button>
                     <label className='b2'>
                         Carregar foto
                         <input type="file" onChange={handleFileChange} style={{ display: 'none' }} />
                     </label>
                 </div>
+
             </section>
 
             <section className='troca-nome'>
@@ -109,11 +86,16 @@ export default function ConfigurarConta() {
                     <h1>Trocar nome de exibição</h1>
                     <input 
                         type="text" 
-                        placeholder='Nome de exibição' 
+                        placeholder="Nome de exibição (máximo 26 caracteres)" 
                         value={novoNome} 
+                        maxLength={26} 
                         onChange={(e) => setNovoNome(e.target.value)} 
                     />
+                    <p className='p' style={{ color: novoNome.length === 26 ? 'red' : 'gray' }}>
+                        {novoNome.length}/26 caracteres
+                    </p>
                 </div>
+
                 <div className='botao-salvar'>
                     <button type="button" className='salvar' onClick={renomearNome}>Salvar</button>
                 </div>

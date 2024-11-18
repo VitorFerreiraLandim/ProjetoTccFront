@@ -92,7 +92,7 @@
                     border-radius: 0.7vh;
                     font-weight: 700;
                     transition: transform 1s ease;
-
+                    font-family: 'Libre+Franklin ', sans-serif;
                     &:hover {
                         transform: scale(1.08);
                     }
@@ -126,13 +126,13 @@
                 margin: 2vh;
                     font-weight: 700;
                     font-family: 'Libre+Franklin ', sans-serif;
-                    font-size: 3.4dvh;
+                    font-size: 3.3dvh;
                     
             }
             input {
                 border: 1px solid #8d8d8d;
                 height: 5vh;
-                width: 28dvh;
+                width: 35dvh;
                 border-radius: 10px;
                 background-color: #E6E6E6;
                 margin-left: 2.4dvh;
@@ -141,6 +141,15 @@
                 font-size: 1.7dvh;
                 padding: 0.5dvh;
                 box-shadow: 0 8px 12px rgba(0, 0, 0, 0.3);
+                margin-top: -0.8dvh;
+            }
+            .p{
+                margin-left: 2.4dvh;
+                font-weight: 500;
+                color: #b1afaf;
+                font-size: 1.6vh;
+                font-family: 'Libre+Franklin ', sans-serif;
+                margin-top: 0.4dvh;
             }
 
         }
