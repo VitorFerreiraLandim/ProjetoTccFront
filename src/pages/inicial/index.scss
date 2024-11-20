@@ -648,7 +648,72 @@
             }
         }
     }
-
+    
+    .modal {
+        &.sair {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 1000;
+            .modal-content {
+                &.sair {
+                    background-color: #494A64;
+                    padding: 20px;
+                    border-radius: 8px;
+                    text-align: center;
+                    max-width: 400px;
+                    width: 90%;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    h2{
+                      color: #ffff;
+                      font-family: "Inter", serif;
+                      font-size: 2.5dvh;
+                    }
+                    .modal-buttons {
+                        display: flex;
+                        gap: 3dvh;
+                        margin-top: 4dvh;
+                     
+                        .confirm-button {
+                            background-color: #4CAF50;
+                            color: white;
+                            border: none;
+                            padding: 15px 25px;
+                            cursor: pointer;
+                            border-radius: 5px;
+                            font-family: "Inter", serif;
+                            transition: transform 1s ease;
+                            &:hover {
+                                background-color: #45a049;
+                                transform: scale(1.1)
+                            }                         
+                         }    
+                        .cancel-button {
+                            background-color: #f44336;
+                            color: white;
+                            border: none;
+                            padding: 15px 25px;
+                            cursor: pointer;
+                            border-radius: 5px;
+                            font-family: "Inter", serif;
+                            transition: transform 1s ease;
+                            &:hover {
+                                background-color: #e53935;
+                                transform: scale(1.1)
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    
+    
     }
 
 @media (max-width: 1600px) {

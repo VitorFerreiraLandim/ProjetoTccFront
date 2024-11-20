@@ -16,6 +16,7 @@ import InputMask from 'react-input-mask';
 
 export default function HomePage() {
     const [isModalOpen, setIsModalOpen] = useState(false);
+    const [isLogoutModalOpen, setIsLogoutModalOpen] = useState(false);
 
     const navigate = useNavigate();
 
@@ -27,19 +28,27 @@ export default function HomePage() {
         setIsModalOpen(false)
     }
 
+    const openLogoutModal = () => {
+        setIsLogoutModalOpen(true);
+        closeModal();
+    };
+
+    const closeLogoutModal = () => {
+        setIsLogoutModalOpen(false);
+
+    };
+
     const removerToken = () => {
         localStorage.removeItem('USUARIO')
         localStorage.removeItem('NOME_USUARIO')
         localStorage.removeItem('USUARIO_ID')
         localStorage.removeItem('TELEFONE_USUARIO');
+        setIsLogoutModalOpen(false);
         navigate('/')
     }
 
-    
-    
-
     useEffect(() => {
-        if (isModalOpen) {
+        if (isModalOpen || isLogoutModalOpen) {
             document.body.style.overflow = 'hidden'; 
         } else {
             document.body.style.overflow = 'unset'; 
@@ -47,7 +56,7 @@ export default function HomePage() {
         return () => {
             document.body.style.overflow = 'unset';
         };
-    }, [isModalOpen]);
+    }, [isModalOpen, isLogoutModalOpen]);
 
     const nome = localStorage.getItem('NOME_USUARIO')
 
@@ -57,17 +66,13 @@ export default function HomePage() {
 
 
     const [mensagem, setMensagem]= useState('');
-    const [telefone, setTelefone]= useState('')
+
 
     const WhatsApp = () => {
-        // Defina o número e a mensagem aqui
-        const phoneNumber = '5511980152875'; // Substitua pelo número do WhatsApp com o código do país
-        
-        
-        // URL para abrir no WhatsApp App
-        const url = `https://web.whatsapp.com/send?phone=${telefone}&text=${encodeURIComponent(mensagem)}`;
+        const phoneNumber = '5511980152875'; 
+
+        const url = `https://web.whatsapp.com/send?phone=${phoneNumber}&text=${encodeURIComponent(mensagem)}`;
     
-        // Abre o WhatsApp App, se disponível
         window.open(url, '_blank');
       };
 
@@ -112,9 +117,9 @@ export default function HomePage() {
                     </div>
                 </div>
             </div>
-            <div id='servicos' className='seviços'>
+            <div  className='seviços'>
                 <h1>Serviços</h1>
-                <div  className='servicoCard'>
+                <div id='servicos'  className='servicoCard'>
                     <div className='imgCortes'>
                         <div className='img1'>
                             <img src={cabelo5} alt="" />
@@ -155,18 +160,6 @@ export default function HomePage() {
                         </div>
                         <div className='inputs'>
                             <div className='nomeEmail'>
-                                <input className='in1' type="text" placeholder='nome' />
-                                <InputMask
-                                className='in2' 
-                                mask="(99) 99999-9999" 
-                                placeholder='Telefone' 
-                                value={telefone}
-                                onChange={e => setTelefone(e.target.value)}
-                                
-                            >
-                                {(inputProps) => <input {...inputProps} />} 
-                            </InputMask>
-                            
                             </div>
                             <textarea className="in3" placeholder="Digite sua mensagem aqui..."
                              value={mensagem} onChange={e =>setMensagem(e.target.value)}></textarea>
@@ -196,11 +189,23 @@ export default function HomePage() {
                    <div className='links'>
                         <Link to='/ConfigConta' className='configuracao'>configurar conta</Link>
                         <Link to='/login' className='sair'>Iniciar seção</Link>
-                        <Link to='/' className='sair' onClick={removerToken}>Sair da seção</Link>
+                        <Link to='/' className='sair' onClick={openLogoutModal}>Sair da seção</Link>
                    </div>
                </div>
            </div>
            
+            )}
+
+            {isLogoutModalOpen && (
+                <div className='modal sair'>
+                    <div className='modal-content sair'>
+                        <h2>Tem certeza que deseja sair?</h2>
+                        <div className='modal-buttons'>
+                            <button className='confirm-button' onClick={removerToken}>Sim</button>
+                            <button className='cancel-button' onClick={closeLogoutModal}>Não</button>
+                        </div>
+                    </div>
+                </div>
             )}
         </div>
     );
