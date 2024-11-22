@@ -28,7 +28,7 @@ export default function AgendamentosCliente() {
 
         const fetchAgendamentos = async () => {
             try {
-                const url = `/agendamento?cliente_id=${clienteId}`;
+                const url = `http://4.172.207.208:5034/agendamento?cliente_id=${clienteId}`;
                 const resp = await api.get(url);
                 console.log('Agendamentos recebidos:', resp.data);
                 setAgendamentos(resp.data);
