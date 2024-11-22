@@ -31,7 +31,7 @@ export default function RedefinicaoSenha() {
         setCarregando(true);
 
         try {
-            const url = 'http://4.172.207.208:5034/verificar-email2';
+            const url = '/verificar-email2';
             const response = await api.post(url, { email: emailInput });
 
             if (response.data.existe) {
