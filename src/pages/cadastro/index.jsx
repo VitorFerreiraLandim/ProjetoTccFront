@@ -97,7 +97,7 @@ export default function RegisterPage() {
             "senha": senha,
         };
 
-        const url = '/cadastro';
+        const url = 'http://4.172.207.208:5034/cadastro';
         try {
             let resp = await api.post(url, userData);
             setMensagemSucesso('Cadastro concluído. Id: ' + resp.data.novoId);
