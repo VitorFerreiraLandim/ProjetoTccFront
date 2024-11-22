@@ -26,7 +26,7 @@ export default function LoginPage() {
         }
 
 
-        const url = `http://4.172.207.208:5034/entrar/`
+        const url = `/entrar/`
         let resp = await api.post(url, usuario)
 
         
