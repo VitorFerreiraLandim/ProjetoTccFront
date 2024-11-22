@@ -121,7 +121,7 @@ export default function AgendamentosCliente() {
             navigate('/servicos');
         } else {
             try {
-                await api.delete(`http://4.172.207.208:5034/agendamento/${id}`);
+                await api.delete(`/agendamento/${id}`);
                 setAgendamentos(agendamentos.filter(agendamento => agendamento.id !== id));
                 navigate('/servicos');
             } catch (error) {
