@@ -216,7 +216,7 @@ export default function Servicos() {
         };
 
         try {   
-            const url = `http://4.172.207.208:5034/agendamentos`;
+            const url = `/agendamentos`;
             let resp = await api.post(url, agendamento);
 
             if (resp.status === 201) {
@@ -243,7 +243,7 @@ export default function Servicos() {
         };
     
         try {
-            const url = `http://4.172.207.208:5034/agendamentos_adm`;
+            const url = `/agendamentos_adm`;
             let resp = await api.post(url, agendamentoAdm);
     
             if (resp.status === 201) {
