@@ -23,7 +23,7 @@ export default function AgendamentosAdm() {
     useEffect(() => {
         const fetchAgendamentos = async () => {
             try {
-                const response = await api.get('http://4.172.207.208:5034/agendamentos_adm');
+                const response = await api.get('/agendamentos_adm');
                 console.log('Agendamentos recebidos:', response.data);
                 setAgendamentos(response.data);
             } catch (error) {
