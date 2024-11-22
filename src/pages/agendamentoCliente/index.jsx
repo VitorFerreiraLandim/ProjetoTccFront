@@ -28,7 +28,7 @@ export default function AgendamentosCliente() {
 
         const fetchAgendamentos = async () => {
             try {
-                const url = `http://4.172.207.208:5034/agendamento?cliente_id=${clienteId}`;
+                const url = `/agendamento?cliente_id=${clienteId}`;
                 const resp = await api.get(url);
                 console.log('Agendamentos recebidos:', resp.data);
                 setAgendamentos(resp.data);
@@ -46,7 +46,7 @@ export default function AgendamentosCliente() {
 
     const Desmarcar = async () => {
         try {
-            const delet = await api.delete(`http://4.172.207.208:5034/agendamento/${selectedId}`);
+            const delet = await api.delete(`/agendamento/${selectedId}`);
             setAgendamentos(agendamentos.filter(agendamento => agendamento.id !== selectedId));
             setIsModalOpen(false);
             setSelectedId(null);
@@ -59,7 +59,7 @@ export default function AgendamentosCliente() {
 
     const DesmarcarAdm = async () => {
         try {
-            await api.delete(`http://4.172.207.208:5034/agendamento_adm/${selectedId}`)
+            await api.delete(`/agendamento_adm/${selectedId}`)
             setSelectedId(null);
         } catch (error) {
             console.error('Erro ao desmarcar agendamento:', error);;
